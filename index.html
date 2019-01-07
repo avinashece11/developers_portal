@@ -235,13 +235,22 @@
             <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#travel-protection" class="toc-h2 toc-link" data-title="Travel Protection">Travel Protection</a>
+                    <a href="#create-policy" class="toc-h2 toc-link" data-title="Create Policy">Create Policy</a>
+                  </li>
+                  <li>
+                    <a href="#get-policy-status" class="toc-h2 toc-link" data-title="Get Policy Status">Get Policy Status</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#api-references" class="toc-h1 toc-link" data-title="API References">API References</a>
               <ul class="toc-list-h2">
+                  <li>
+                    <a href="#urls" class="toc-h2 toc-link" data-title="URLs">URLs</a>
+                  </li>
+                  <li>
+                    <a href="#api-routes" class="toc-h2 toc-link" data-title="API Routes">API Routes</a>
+                  </li>
                   <li>
                     <a href="#travel-protection-packages-api" class="toc-h2 toc-link" data-title="Travel Protection Packages API">Travel Protection Packages API</a>
                   </li>
@@ -250,17 +259,6 @@
                   </li>
                   <li>
                     <a href="#travel-protection-status-api" class="toc-h2 toc-link" data-title="Travel Protection Status API">Travel Protection Status API</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#policy" class="toc-h1 toc-link" data-title="Policy">Policy</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#create-policy" class="toc-h2 toc-link" data-title="Create Policy">Create Policy</a>
-                  </li>
-                  <li>
-                    <a href="#get-policy-status" class="toc-h2 toc-link" data-title="Get Policy Status">Get Policy Status</a>
                   </li>
               </ul>
           </li>
@@ -325,53 +323,9 @@
 Initialize the client before calling any functionality of SDK else it will raise error.<br/>
 Please make sure you initialize client only once i.e. at start of your app else it will raise error.
 </aside>
-<h1 id='guide'>Guide</h1><h2 id='travel-protection'>Travel Protection</h2><h3 id='urls'>URLs</h3>
-<p>You can access Travel Protection API using these URLS :</p>
-
-<table><thead>
-<tr>
-<th>Environment</th>
-<th>URL</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Sandbox</td>
-<td>https://integrations-sandbox.pasarpolis.com</td>
-</tr>
-<tr>
-<td>Production</td>
-<td>https://integrations.pasarpolis.com</td>
-</tr>
-</tbody></table>
-<h3 id='api-routes'>API Routes</h3>
-<table><thead>
-<tr>
-<th>Endpoint</th>
-<th>HTTP Method</th>
-<th></th>
-<th>Link</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>/api/v2/product/travel-protection/packages/</td>
-<td>GET</td>
-<td>Get available travel protection packages</td>
-<td>click <a href="#travel-protection-packages-api">here</a></td>
-</tr>
-<tr>
-<td>/api/v2/createpolicy/</td>
-<td>POST</td>
-<td>Send travel protection application data to generate policy</td>
-<td>click <a href="#travel-protection-registration-api">here</a></td>
-</tr>
-<tr>
-<td>/api/v2/policystatus/</td>
-<td>POST</td>
-<td>Check Statuses of given policies</td>
-<td>click <a href="#travel-protection-status-api">here</a></td>
-</tr>
-</tbody></table>
-<h1 id='api-references'>API References</h1><h2 id='travel-protection-packages-api'>Travel Protection Packages API</h2>
+<h1 id='guide'>Guide</h1>
+<p>This guide will help you use our SDK for Travel Protection.</p>
+<h2 id='create-policy'>Create Policy</h2>
 <blockquote>
 <p>Example code:</p>
 </blockquote>
@@ -438,6 +392,167 @@ Please make sure you initialize client only once i.e. at start of your app else 
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
 
 </code></pre>
+<blockquote>
+<p>The above code snippet returns would return:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
+APP-000000224
+
+</code></pre>
+<p>The above action will create a new policy</p>
+
+<p>For policy creation you will need Product and Params as parameters</p>
+
+<p>where:</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
+
+<aside class="notice">
+Signature of every product specific data is provided <a href="https://gitlab.com/pasarpolis/pasarpolis-sdk-java/tree/master/product_type_doc"> here </a>
+</aside>
+
+<p>It will return a Policy object which contains:</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+<h2 id='get-policy-status'>Get Policy Status</h2>
+<blockquote>
+<p>Example code</p>
+</blockquote>
+<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
+
+
+<span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
+<span class="n">policies</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
+<span class="nb">puts</span> <span class="n">policies</span>
+
+</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
+
+
+<span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
+<span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">policies</span><span class="p">)</span>
+
+</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
+<span class="k">try</span> <span class="o">{</span>  
+  <span class="n">String</span><span class="o">[]</span> <span class="n">refs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="o">};</span>
+  <span class="n">Policy</span><span class="o">[]</span> <span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">getPolicyStatus</span><span class="o">(</span><span class="n">refs</span><span class="o">);</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policies</span><span class="o">);</span>
+<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Error Handling part</span>
+<span class="o">}</span>
+
+</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
+  </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
+  </span><span class="s">"fmt"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="n">String</span><span class="p">[]</span><span class="x"> </span><span class="n">refs</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="p">{</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">};</span><span class="x">
+</span><span class="n">policies</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">GetPolicyStatus</span><span class="p">(</span><span class="n">refs</span><span class="p">);</span><span class="x">
+</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policies</span><span class="p">);</span><span class="x">
+
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">"DummyPartnerCode"</span><span class="p">,</span> <span class="s2">"DummyPartnerSecret"</span><span class="p">,</span> <span class="s2">"https://integrations.pasarpolis.com"</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">getPolicyStatus</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPolicyStatus</span><span class="p">(</span><span class="s2">"48fc2801e487af79ef311621f63e4133c"</span><span class="p">)</span>
+
+<span class="cm">/** It will give response as promise */</span> 
+<span class="nx">getPolicyStatus</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+
+
+</code></pre>
+<blockquote>
+<p>The above will return:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>[ 
+    { 
+        ref: '48fc2801e487af79ef311621f63e4133c',
+        application_no: 'APP-000000XXX',
+        document_url: 'url',
+        policy_no: 'XXX',
+        status_code: 2,
+        status: 'COMPLETED',
+        issue_date: '2018-12-10 07:34:12' 
+    } 
+]
+</code></pre>
+<p>Get policy status will give status of the policy created by providing policy reference number. </p>
+
+<p>It will return array of policies object being queried for.</p>
+
+<p>where:</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.</p>
+
+<p>It will return an array of Policy objects. Each Policy object contains:</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
+<h1 id='api-references'>API References</h1><h3 id='urls'>URLs</h3>
+<p>You can access our API using these URLS :</p>
+
+<table><thead>
+<tr>
+<th>Environment</th>
+<th>URL</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Testing</td>
+<td>https://integrations-testing.pasarpolis.com</td>
+</tr>
+<tr>
+<td>Sandbox</td>
+<td>https://integrations-sandbox.pasarpolis.com</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>https://integrations.pasarpolis.com</td>
+</tr>
+</tbody></table>
+<h3 id='api-routes'>API Routes</h3>
+<table><thead>
+<tr>
+<th>Endpoint</th>
+<th>HTTP Method</th>
+<th></th>
+<th>Link</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>/api/v2/product/travel-protection/packages/</td>
+<td>GET</td>
+<td>Get available travel protection packages</td>
+<td>click <a href="#travel-protection-packages-api">here</a></td>
+</tr>
+<tr>
+<td>/api/v2/createpolicy/</td>
+<td>POST</td>
+<td>Send travel protection application data to generate policy</td>
+<td>click <a href="#travel-protection-registration-api">here</a></td>
+</tr>
+<tr>
+<td>/api/v2/policystatus/</td>
+<td>POST</td>
+<td>Check Statuses of given policies</td>
+<td>click <a href="#travel-protection-status-api">here</a></td>
+</tr>
+</tbody></table>
+<h2 id='travel-protection-packages-api'>Travel Protection Packages API</h2>
 <blockquote>
 <p>The above code snippet returns would return:</p>
 </blockquote>
@@ -535,72 +650,6 @@ Please make sure you initialize client only once i.e. at start of your app else 
 </tr>
 </tbody></table>
 <h2 id='travel-protection-registration-api'>Travel Protection Registration API</h2>
-<blockquote>
-<p>Example code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="kp">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_policy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">reference_number</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">application_number</span>
-
-</code></pre><pre class="highlight python tab-python"><code>
-<span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="n">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">create_policy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">reference_number</span><span class="p">,</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">application_number</span><span class="p">)</span>
-
-
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
-
-<span class="k">try</span> <span class="o">{</span>
-  <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span><span class="s">"Jacob"</span><span class="o">);</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"last_property"</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
-  <span class="n">Policy</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">createPolicy</span><span class="o">(</span><span class="s">"travel-protection"</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>  
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">referenceNumber</span><span class="o">);</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">applicationNumber</span><span class="o">);</span>
-<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-  <span class="c1">// Error Handling part</span>
-<span class="o">}</span>
-
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
-  </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
-  </span><span class="s">"fmt"</span><span class="x">
-</span><span class="p">)</span><span class="x">
-
-
-</span><span class="n">params</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="k">interface</span><span class="p">{}{};</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="no">true</span><span class="x">
-</span><span class="n">policy</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">CreatePolicy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">referenceNumber</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">applicationNumber</span><span class="p">);</span><span class="x">
-
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
-
-<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'travel-protection'</span>
-<span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"note"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"travel_destination"</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
-<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
-
-<span class="cm">/** It will give response as promise */</span> 
-<span class="nx">createPolicy</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
-
-</code></pre>
 <blockquote>
 <p>Sample JSON Request Body</p>
 </blockquote>
@@ -876,72 +925,6 @@ Please make sure you initialize client only once i.e. at start of your app else 
 </tbody></table>
 <h2 id='travel-protection-status-api'>Travel Protection Status API</h2>
 <blockquote>
-<p>Example code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="kp">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_policy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">reference_number</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">application_number</span>
-
-</code></pre><pre class="highlight python tab-python"><code>
-<span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="n">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">create_policy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">reference_number</span><span class="p">,</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">application_number</span><span class="p">)</span>
-
-
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
-
-<span class="k">try</span> <span class="o">{</span>
-  <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span><span class="s">"Jacob"</span><span class="o">);</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"last_property"</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
-  <span class="n">Policy</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">createPolicy</span><span class="o">(</span><span class="s">"travel-protection"</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>  
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">referenceNumber</span><span class="o">);</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">applicationNumber</span><span class="o">);</span>
-<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-  <span class="c1">// Error Handling part</span>
-<span class="o">}</span>
-
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
-  </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
-  </span><span class="s">"fmt"</span><span class="x">
-</span><span class="p">)</span><span class="x">
-
-
-</span><span class="n">params</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="k">interface</span><span class="p">{}{};</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="no">true</span><span class="x">
-</span><span class="n">policy</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">CreatePolicy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">referenceNumber</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">applicationNumber</span><span class="p">);</span><span class="x">
-
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
-
-<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'travel-protection'</span>
-<span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"note"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"travel_destination"</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
-<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
-
-<span class="cm">/** It will give response as promise */</span> 
-<span class="nx">createPolicy</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
-
-</code></pre>
-<blockquote>
 <p>Sample URL Request body</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="err">#Body</span><span class="w"> </span><span class="err">accepts</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">references</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">post</span><span class="w">
@@ -979,183 +962,6 @@ Please make sure you initialize client only once i.e. at start of your app else 
 <td>Check statuses of given policies</td>
 </tr>
 </tbody></table>
-<h1 id='policy'>Policy</h1><h2 id='create-policy'>Create Policy</h2>
-<blockquote>
-<p>Example code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s2">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="kp">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_policy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">reference_number</span>
-<span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">application_number</span>
-
-</code></pre><pre class="highlight python tab-python"><code>
-<span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
-
-<span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span>
-<span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="n">true</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">create_policy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">reference_number</span><span class="p">,</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">application_number</span><span class="p">)</span>
-
-
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
-
-<span class="k">try</span> <span class="o">{</span>
-  <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span><span class="s">"Jacob"</span><span class="o">);</span>
-  <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"last_property"</span><span class="o">,</span><span class="kc">true</span><span class="o">);</span>
-  <span class="n">Policy</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">createPolicy</span><span class="o">(</span><span class="s">"travel-protection"</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>  
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">referenceNumber</span><span class="o">);</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">applicationNumber</span><span class="o">);</span>
-<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-  <span class="c1">// Error Handling part</span>
-<span class="o">}</span>
-
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
-  </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
-  </span><span class="s">"fmt"</span><span class="x">
-</span><span class="p">)</span><span class="x">
-
-
-</span><span class="n">params</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="k">interface</span><span class="p">{}{};</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"name"</span><span class="p">]</span><span class="o">=</span><span class="s">"Jacob"</span><span class="x">
-</span><span class="n">params</span><span class="p">[</span><span class="s">"last_property"</span><span class="p">]</span><span class="o">=</span><span class="no">true</span><span class="x">
-</span><span class="n">policy</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">CreatePolicy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">referenceNumber</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">applicationNumber</span><span class="p">);</span><span class="x">
-
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
-
-<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'travel-protection'</span>
-<span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"note"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
-    <span class="s2">"travel_destination"</span><span class="p">:</span> <span class="mi">1</span>
-<span class="p">}</span>
-<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
-
-<span class="cm">/** It will give response as promise */</span> 
-<span class="nx">createPolicy</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
-
-</code></pre>
-<blockquote>
-<p>The above code snippet returns would return:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
-APP-000000224
-
-</code></pre>
-<p>The above action will create a new policy</p>
-
-<p>For policy creation you will need Product and Params as parameters</p>
-
-<p>where:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
-
-<aside class="notice">
-Signature of every product specific data is provided <a href="https://gitlab.com/pasarpolis/pasarpolis-sdk-java/tree/master/product_type_doc"> here </a>
-</aside>
-
-<p>It will return a Policy object which contains:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-<h2 id='get-policy-status'>Get Policy Status</h2>
-<blockquote>
-<p>Example code</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
-
-
-<span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
-<span class="n">policies</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
-<span class="nb">puts</span> <span class="n">policies</span>
-
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
-
-
-<span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
-<span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">policies</span><span class="p">)</span>
-
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
-<span class="k">try</span> <span class="o">{</span>  
-  <span class="n">String</span><span class="o">[]</span> <span class="n">refs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="o">};</span>
-  <span class="n">Policy</span><span class="o">[]</span> <span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">getPolicyStatus</span><span class="o">(</span><span class="n">refs</span><span class="o">);</span>
-  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policies</span><span class="o">);</span>
-<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-  <span class="c1">// Error Handling part</span>
-<span class="o">}</span>
-
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
-  </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
-  </span><span class="s">"fmt"</span><span class="x">
-</span><span class="p">)</span><span class="x">
-
-</span><span class="n">String</span><span class="p">[]</span><span class="x"> </span><span class="n">refs</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="p">{</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">};</span><span class="x">
-</span><span class="n">policies</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">GetPolicyStatus</span><span class="p">(</span><span class="n">refs</span><span class="p">);</span><span class="x">
-</span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policies</span><span class="p">);</span><span class="x">
-
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">"DummyPartnerCode"</span><span class="p">,</span> <span class="s2">"DummyPartnerSecret"</span><span class="p">,</span> <span class="s2">"https://integrations.pasarpolis.com"</span><span class="p">)</span>
-
-<span class="kr">const</span> <span class="nx">getPolicyStatus</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPolicyStatus</span><span class="p">(</span><span class="s2">"48fc2801e487af79ef311621f63e4133c"</span><span class="p">)</span>
-
-<span class="cm">/** It will give response as promise */</span> 
-<span class="nx">getPolicyStatus</span>
-    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
-    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
-
-
-</code></pre>
-<blockquote>
-<p>The above will return:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>[ 
-    { 
-        ref: '48fc2801e487af79ef311621f63e4133c',
-        application_no: 'APP-000000XXX',
-        document_url: 'url',
-        policy_no: 'XXX',
-        status_code: 2,
-        status: 'COMPLETED',
-        issue_date: '2018-12-10 07:34:12' 
-    } 
-]
-</code></pre>
-<p>Get policy status will give status of the policy created by providing policy reference number. </p>
-
-<p>It will return array of policies object being queried for.</p>
-
-<p>where:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.</p>
-
-<p>It will return an array of Policy objects. Each Policy object contains:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
 <h1 id='errors'>Errors</h1>
 <p>Pasarpolis SDK uses the following error codes:</p>
 
