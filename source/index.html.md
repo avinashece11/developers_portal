@@ -91,9 +91,11 @@ Please make sure you initialize client only once i.e. at start of your app else 
 
 # Guide
 
+##Travel Protection
+
 This guide will help you use our SDK for Travel Protection.
 
-## Create Policy
+### Create Policy
 
 > Example code:
 
@@ -205,7 +207,7 @@ It will return a Policy object which contains:
 
 
 
-## Get Policy Status
+### Get Policy Status
 
 > Example code
 
