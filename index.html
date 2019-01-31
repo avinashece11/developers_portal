@@ -1,14 +1,13 @@
-
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Pasarpolis Developer Guide</title>
-
     <style>
-      .highlight table td { padding: 5px; }
+        .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
@@ -198,10 +197,10 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
-  </head>
+    <script src="javascripts/all.js"></script>
+</head>
 
-  <body class="index" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;go&quot;,&quot;javascript&quot;]">
+<body class="index" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;go&quot;,&quot;javascript&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -209,79 +208,79 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+        <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="java">java</a>
-              <a href="#" data-language-name="go">go</a>
-              <a href="#" data-language-name="javascript">javascript</a>
+            <a href="#" data-language-name="ruby">ruby</a>
+            <a href="#" data-language-name="python">python</a>
+            <a href="#" data-language-name="java">java</a>
+            <a href="#" data-language-name="go">go</a>
+            <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
+            <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+        <ul id="toc" class="toc-list-h1">
+            <li>
+                <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+            </li>
+            <li>
+                <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+            </li>
+            <li>
+                <a href="#initialization" class="toc-h1 toc-link" data-title="Initialization">Initialization</a>
+            </li>
+            <li>
+                <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
+                <ul class="toc-list-h2">
+                    <li>
+                        <a href="#travel-protection" class="toc-h2 toc-link" data-title="Travel Protection">Travel Protection</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#api-references" class="toc-h1 toc-link" data-title="API References">API References</a>
+                <ul class="toc-list-h2">
+                    <li>
+                        <a href="#urls" class="toc-h2 toc-link" data-title="URLs">URLs</a>
+                    </li>
+                    <li>
+                        <a href="#api-routes" class="toc-h2 toc-link" data-title="API Routes">API Routes</a>
+                    </li>
+                    <li>
+                        <a href="#travel-protection-packages-api" class="toc-h2 toc-link" data-title="Travel Protection Packages API">Travel Protection Packages API</a>
+                    </li>
+                    <li>
+                        <a href="#travel-protection-registration-api" class="toc-h2 toc-link" data-title="Travel Protection Registration API">Travel Protection Registration API</a>
+                    </li>
+                    <li>
+                        <a href="#travel-protection-status-api" class="toc-h2 toc-link" data-title="Travel Protection Status API">Travel Protection Status API</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+            </li>
+            <li>
+              <a href="#calculating-hmac" class="toc-h1 toc-link active" data-title="Calculating HMAC">Calculating HMAC</a>
           </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#initialization" class="toc-h1 toc-link" data-title="Initialization">Initialization</a>
-          </li>
-          <li>
-            <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#travel-protection" class="toc-h2 toc-link" data-title="Travel Protection">Travel Protection</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#api-references" class="toc-h1 toc-link" data-title="API References">API References</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#urls" class="toc-h2 toc-link" data-title="URLs">URLs</a>
-                  </li>
-                  <li>
-                    <a href="#api-routes" class="toc-h2 toc-link" data-title="API Routes">API Routes</a>
-                  </li>
-                  <li>
-                    <a href="#travel-protection-packages-api" class="toc-h2 toc-link" data-title="Travel Protection Packages API">Travel Protection Packages API</a>
-                  </li>
-                  <li>
-                    <a href="#travel-protection-registration-api" class="toc-h2 toc-link" data-title="Travel Protection Registration API">Travel Protection Registration API</a>
-                  </li>
-                  <li>
-                    <a href="#travel-protection-status-api" class="toc-h2 toc-link" data-title="Travel Protection Status API">Travel Protection Status API</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-      </ul>
+        </ul>
     </div>
     <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to Pasarpolis developer guide. You can use our API to access API endpoints for policy.</p>
-
-<p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-<h1 id='authentication'>Authentication</h1>
-<p>We use HMAC based authetication behind the scenes.</p>
-
-<p>You just need PartnerCode and PartnerSecret to get started. (details given in the Initialization section)</p>
-
-<p>To know more about HMAC authentication click <a href="https://en.wikipedia.org/wiki/HMAC">here</a></p>
-<h1 id='initialization'>Initialization</h1>
-<blockquote>
-<p>To initialize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
+        <div class="dark-box"></div>
+        <div class="content">
+            <h1 id='introduction'>Introduction</h1>
+            <p>Welcome to Pasarpolis developer guide. You can use our API to access API endpoints for policy.</p>
+            <p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+            <h1 id='authentication'>Authentication</h1>
+            <p>We use HMAC based authetication behind the scenes.</p>
+            <p>You just need PartnerCode and PartnerSecret to get started. (details given in the Initialization section)</p>
+            <p>To know more about HMAC authentication click <a href="https://en.wikipedia.org/wiki/HMAC">here</a></p>
+            <h1 id='initialization'>Initialization</h1>
+            <blockquote>
+                <p>To initialize, use this code:</p>
+            </blockquote>
+            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
 
 <span class="no">PasarpolisSdk</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span><span class="o">&lt;</span><span class="no">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="no">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="no">Host</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasapolis</span> <span class="kn">import</span> <span class="n">Client</span>
@@ -302,31 +301,24 @@
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
 
 </code></pre>
-<p>For Initilization you need PartnerCode, PartnerSecret and Host.</p>
-
-<p><strong>PartnerCode</strong> (string)    : Provided by Pasarpolis for Authentication.</p>
-
-<p><strong>PartnerSecret</strong> (string)  : Secret Key provided by Pasarpolis.</p>
-
-<p><strong>Host</strong> (string)           : Fully qualified domain name as specified below.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Testing:    https://integrations-testing.pasarpolis.com</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Sandbox:    https://integrations-sandbox.pasarpolis.com</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;Production: https://integrations.pasarpolis.com</p>
-
-<aside class="notice">
-Initialize the client before calling any functionality of SDK else it will raise error.<br/>
-Please make sure you initialize client only once i.e. at start of your app else it will raise error.
-</aside>
-<h1 id='guide'>Guide</h1><h2 id='travel-protection'>Travel Protection</h2>
-<p>This guide will help you use our SDK for Travel Protection.</p>
-<h3 id='create-policy'>Create Policy</h3>
-<blockquote>
-<p>Example code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
+            <p>For Initilization you need PartnerCode, PartnerSecret and Host.</p>
+            <p><strong>PartnerCode</strong> (string) : Provided by Pasarpolis for Authentication.</p>
+            <p><strong>PartnerSecret</strong> (string) : Secret Key provided by Pasarpolis.</p>
+            <p><strong>Host</strong> (string) : Fully qualified domain name as specified below.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Testing: https://integrations-testing.pasarpolis.com</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Sandbox: https://integrations-sandbox.pasarpolis.com</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Production: https://integrations.pasarpolis.com</p>
+            <aside class="notice">
+                Initialize the client before calling any functionality of SDK else it will raise error.<br />
+                Please make sure you initialize client only once i.e. at start of your app else it will raise error.
+            </aside>
+            <h1 id='guide'>Guide</h1><h2 id='travel-protection'>Travel Protection</h2>
+            <p>This guide will help you use our SDK for Travel Protection.</p>
+            <h3 id='create-policy'>Create Policy</h3>
+            <blockquote>
+                <p>Example code:</p>
+            </blockquote>
+            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
 
 <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Jacob"</span>
@@ -389,37 +381,29 @@ Please make sure you initialize client only once i.e. at start of your app else 
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
 
 </code></pre>
-<blockquote>
-<p>The above code snippet returns would return:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
 APP-000000224
 
 </code></pre>
-<p>The above action will create a new policy</p>
-
-<p>For policy creation you will need Product and Params as parameters</p>
-
-<p>where:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
-
-<aside class="notice">
-Signature of every product specific data is provided <a href="https://gitlab.com/pasarpolis/pasarpolis-sdk-java/tree/master/product_type_doc"> here </a>
-</aside>
-
-<p>It will return a Policy object which contains:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-<h3 id='get-policy-status'>Get Policy Status</h3>
-<blockquote>
-<p>Example code</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
+            <p>The above action will create a new policy</p>
+            <p>For policy creation you will need Product and Params as parameters</p>
+            <p>where:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
+            <aside class="notice">
+                Signature of every product specific data is provided <a href="https://gitlab.com/pasarpolis/pasarpolis-sdk-java/tree/master/product_type_doc"> here </a>
+            </aside>
+            <p>It will return a Policy object which contains:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+            <h3 id='get-policy-status'>Get Policy Status</h3>
+            <blockquote>
+                <p>Example code</p>
+            </blockquote>
+            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
 
 
 <span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
@@ -463,10 +447,10 @@ Signature of every product specific data is provided <a href="https://gitlab.com
 
 
 </code></pre>
-<blockquote>
-<p>The above will return:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>[ 
+            <blockquote>
+                <p>The above will return:</p>
+            </blockquote>
+            <pre class="highlight plaintext"><code>[ 
     { 
         ref: '48fc2801e487af79ef311621f63e4133c',
         application_no: 'APP-000000XXX',
@@ -478,82 +462,77 @@ Signature of every product specific data is provided <a href="https://gitlab.com
     } 
 ]
 </code></pre>
-<p>Get policy status will give status of the policy created by providing policy reference number. </p>
-
-<p>It will return array of policies object being queried for.</p>
-
-<p>where:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.</p>
-
-<p>It will return an array of Policy objects. Each Policy object contains:</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
-<h1 id='api-references'>API References</h1><h3 id='urls'>URLs</h3>
-<p>You can access our API using these URLS :</p>
-
-<table><thead>
-<tr>
-<th>Environment</th>
-<th>URL</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Testing</td>
-<td>https://integrations-testing.pasarpolis.com</td>
-</tr>
-<tr>
-<td>Sandbox</td>
-<td>https://integrations-sandbox.pasarpolis.com</td>
-</tr>
-<tr>
-<td>Production</td>
-<td>https://integrations.pasarpolis.com</td>
-</tr>
-</tbody></table>
-<h3 id='api-routes'>API Routes</h3>
-<table><thead>
-<tr>
-<th>Endpoint</th>
-<th>HTTP Method</th>
-<th></th>
-<th>Link</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>/api/v2/product/travel-protection/packages/</td>
-<td>GET</td>
-<td>Get available travel protection packages</td>
-<td>click <a href="#travel-protection-packages-api">here</a></td>
-</tr>
-<tr>
-<td>/api/v2/createpolicy/</td>
-<td>POST</td>
-<td>Send travel protection application data to generate policy</td>
-<td>click <a href="#travel-protection-registration-api">here</a></td>
-</tr>
-<tr>
-<td>/api/v2/policystatus/</td>
-<td>POST</td>
-<td>Check Statuses of given policies</td>
-<td>click <a href="#travel-protection-status-api">here</a></td>
-</tr>
-</tbody></table>
-<h2 id='travel-protection-packages-api'>Travel Protection Packages API</h2>
-<blockquote>
-<p>The above code snippet returns would return:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
+            <p>Get policy status will give status of the policy created by providing policy reference number. </p>
+            <p>It will return array of policies object being queried for.</p>
+            <p>where:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.</p>
+            <p>It will return an array of Policy objects. Each Policy object contains:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
+            <h1 id='api-references'>API References</h1><h3 id='urls'>URLs</h3>
+            <p>You can access our API using these URLS :</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Environment</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Testing</td>
+                        <td>https://integrations-testing.pasarpolis.com</td>
+                    </tr>
+                    <tr>
+                        <td>Sandbox</td>
+                        <td>https://integrations-sandbox.pasarpolis.com</td>
+                    </tr>
+                    <tr>
+                        <td>Production</td>
+                        <td>https://integrations.pasarpolis.com</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 id='api-routes'>API Routes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>HTTP Method</th>
+                        <th></th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v2/product/travel-protection/packages/</td>
+                        <td>GET</td>
+                        <td>Get available travel protection packages</td>
+                        <td>click <a href="#travel-protection-packages-api">here</a></td>
+                    </tr>
+                    <tr>
+                        <td>/api/v2/createpolicy/</td>
+                        <td>POST</td>
+                        <td>Send travel protection application data to generate policy</td>
+                        <td>click <a href="#travel-protection-registration-api">here</a></td>
+                    </tr>
+                    <tr>
+                        <td>/api/v2/policystatus/</td>
+                        <td>POST</td>
+                        <td>Check Statuses of given policies</td>
+                        <td>click <a href="#travel-protection-status-api">here</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id='travel-protection-packages-api'>Travel Protection Packages API</h2>
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
    </span><span class="p">{</span><span class="w">  
       </span><span class="s2">"package_name"</span><span class="p">:</span><span class="s2">"PLAN B DOMESTIK ROUNDTRIP"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"package_no"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="w">
@@ -631,26 +610,28 @@ Signature of every product specific data is provided <a href="https://gitlab.com
 </span><span class="p">]</span><span class="w">
 
 </span></code></pre>
-<p>Get all travel protection packages from insurance company</p>
-
-<table><thead>
-<tr>
-<th>Endpoint</th>
-<th>HTTP Method</th>
-<th>Definition</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>/api/v2/product/travel-protection/packages/</td>
-<td>GET</td>
-<td>Get available travel protection packages</td>
-</tr>
-</tbody></table>
-<h2 id='travel-protection-registration-api'>Travel Protection Registration API</h2>
-<blockquote>
-<p>Sample JSON Request Body</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+            <p>Get all travel protection packages from insurance company</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>HTTP Method</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v2/product/travel-protection/packages/</td>
+                        <td>GET</td>
+                        <td>Get available travel protection packages</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id='travel-protection-registration-api'>Travel Protection Registration API</h2>
+            <blockquote>
+                <p>Sample JSON Request Body</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"travel-protection"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A259"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"policy_insured"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -696,244 +677,250 @@ Signature of every product specific data is provided <a href="https://gitlab.com
   </span><span class="s2">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<blockquote>
-<p>The above code snippet returns would return:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"application_no"</span><span class="p">:</span><span class="s2">"APP-000008152"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ref"</span><span class="p">:</span><span class="s2">"e30ef12cafa6007868ad67fe3b6ee82095f8174e"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Travel company or provider can register their passenger for travel insurance.</p>
-<h3 id='definition'>Definition</h3>
-<table><thead>
-<tr>
-<th>Endpoint</th>
-<th>HTTP Method</th>
-<th>Definition</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>/api/v2/createpolicy/</td>
-<td>POST</td>
-<td>Send travel protection application data to generate policy</td>
-</tr>
-</tbody></table>
-<h3 id='json-request-body-data'>JSON Request Body Data:</h3>
-<p><strong>Main attribute</strong></p>
-
-<table><thead>
-<tr>
-<th>JSON Attribute</th>
-<th>Definition</th>
-<th>Required</th>
-<th>Validation</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>product</td>
-<td>&quot;travel-protection&quot;</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>reference_id</td>
-<td>reference id from to uniquely identify a request, must unique for every travel protection registration</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>policy_insured</td>
-<td>Person who will be insured by insurance</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>policy_beneficiary</td>
-<td>Person who will receive the death benefit in the event of the insured death</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>flight_information</td>
-<td>Flight Information. <strong>Possible Values</strong>: (1,2,3) 0 =&gt; (Departure) 1 =&gt; (Departure Transit) 2 =&gt; (Return) 3 =&gt; (Return Transit)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>booking_code</td>
-<td>Passenger flight booking code</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>inception_date</td>
-<td>Initial period of insurance coverage (YYYY-MM-DD)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>package_id</td>
-<td>travel protection package id. <strong>Possible Values</strong>: (1,2,3,4,5,6,7,8,9,10) 1 =&gt; 1 =&gt; PLAN A DOMESTIK ONEWAY , 2 =&gt; PLAN B DOMESTIK ONEWAY , 3 =&gt; PLAN A DOMESTIK ROUNDTRIP , 4 =&gt; PLAN B DOMESTIK ROUNDTRIP , 5 =&gt; PLAN A OVERSEAS ONE WAY , 6 =&gt; PLAN A OVERSEAS ROUNDTRIP , 7 =&gt; PLAN C OVERSEAS ONE WAY , 8 =&gt; PLAN C OVERSEAS ROUNDTRIP , 9 =&gt; PLAN B OVERSEAS ONE WAY , 10 =&gt; PLAN B OVERSEAS ROUNDTRIP</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>travel_type</td>
-<td>Travel type to know wether the passenger have one way trip or round trip. <strong>Possible Values</strong>: (1, 2)    1 =&gt; (One way trip), 2 =&gt;(Round trip)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>transit_type</td>
-<td>Transit type to know what transits the passenger&#39;s flight has. <strong>Possible Values</strong>: (0,1,2,3)  0 =&gt; (No transits), 1 =&gt; (Transit on departure), 2 =&gt; (Transit on return), 3 =&gt; (Transit on both departure and return)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>travel_destination</td>
-<td>passenger travel destination <strong>Possible Values</strong>: (1,2) 1 =&gt; (Domestic flight in Indonesia), 2 =&gt; (International flight)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>trip_reason</td>
-<td>passenger trip reason. <strong>Possible Values</strong> (1,2,3,4,5,6)  1 =&gt; (Wisata), 2 =&gt; (Bisnis), 3 =&gt; (Kunjungan Keluarga), 4 =&gt; (Seminar), 5 =&gt; (Training), 6 =&gt; (Tugas Kantor)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>note</td>
-<td>Note for description</td>
-<td>No</td>
-<td></td>
-</tr>
-</tbody></table>
-
-<aside class="notice">If package is for domestic flight, then travel_destination value must be 1 (Domestic flight in Indonesia) - If package is for international flight, then travel_destination value must be 2 (International flight)
-</aside>
-
-<p><strong>policy_insured attribute</strong></p>
-
-<table><thead>
-<tr>
-<th>JSON Attribute</th>
-<th>Definition</th>
-<th>Required</th>
-<th>Validation</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>insured name</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>gender</td>
-<td>insured</td>
-<td>No</td>
-<td></td>
-</tr>
-<tr>
-<td>date_of_birth</td>
-<td>insured date of birth (YYYY-MM-DD)</td>
-<td>No</td>
-<td></td>
-</tr>
-<tr>
-<td>identity_type</td>
-<td>the identity used in travel protection registration <strong>Possible Values:</strong> 1 =&gt; (KTP), 2 =&gt; (SIM), 3 =&gt; (PASSPORT)</td>
-<td>No</td>
-<td>Max length 100</td>
-</tr>
-<tr>
-<td>address</td>
-<td>insured address</td>
-<td>Yes</td>
-<td>Max length 500</td>
-</tr>
-<tr>
-<td>city</td>
-<td>city where insured live</td>
-<td>Yes</td>
-<td>Max length 200</td>
-</tr>
-<tr>
-<td>zip_code</td>
-<td>insured postal code</td>
-<td>Yes</td>
-<td>Max length 100</td>
-</tr>
-<tr>
-<td>phone_no</td>
-<td>insured phone number</td>
-<td>Yes</td>
-<td>Max length 100</td>
-</tr>
-<tr>
-<td>handphone_no</td>
-<td>insured handphone number</td>
-<td>No</td>
-<td>Max length 100</td>
-</tr>
-<tr>
-<td>email</td>
-<td>insured email address</td>
-<td>Yes</td>
-<td>Max length 200</td>
-</tr>
-<tr>
-<td>policy_holder_status</td>
-<td>status to verify insured is a policy holder <strong>Possible Values:</strong> 1 =&gt; (Policy Holder), 2 =&gt; (Participant)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>insured_status</td>
-<td>insured family status <strong>Possible Values:</strong> 1 =&gt; (Insured), 2 =&gt; (Spouse), 3 =&gt; (Child) <strong>NOTE:</strong> If policy_holder_status is 1, then insured_status must be 1 (Insured) </td>
-<td>Yes</td>
-<td></td>
-</tr>
-</tbody></table>
-
-<p><strong>policy_beneficiary attribute</strong></p>
-
-<table><thead>
-<tr>
-<th>JSON Attribute</th>
-<th>Definition</th>
-<th>Required</th>
-<th>Validation</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>name</td>
-<td>benficary insurance name</td>
-<td>Yes</td>
-<td></td>
-</tr>
-<tr>
-<td>relationship</td>
-<td>beneficiary relationship with policy holder <strong>Possible Values:</strong> (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21) 1 =&gt; (Adik), 2 =&gt; (Anak), 3 =&gt; (Ayah), 4 =&gt; (Cucu), 5 =&gt; (Dealer), 6 =&gt; (Ibu), 7 =&gt; (Istri), 8 =&gt; (Kakak), 9 =&gt; (Kakek), 10 =&gt; (Keponakan), 11 =&gt; (Kerabat), 12 =&gt; (Kreditur), 13 =&gt; (Lembaga Pendidikan), 14(Majikan =&gt;), 15 =&gt; (Nenek), 16 =&gt; (Orang Tua), 17 =&gt; (Perusahaan =&gt;), 18 =&gt; (Pimpinan), 19 =&gt; (Saudara), 20 =&gt; (Sepupu), 21 =&gt; (Suami)</td>
-<td>Yes</td>
-<td></td>
-</tr>
-</tbody></table>
-<h2 id='travel-protection-status-api'>Travel Protection Status API</h2>
-<blockquote>
-<p>Sample URL Request body</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="err">#Body</span><span class="w"> </span><span class="err">accepts</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">references</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">post</span><span class="w">
+            <p>Travel company or provider can register their passenger for travel insurance.</p>
+            <h3 id='definition'>Definition</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>HTTP Method</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v2/createpolicy/</td>
+                        <td>POST</td>
+                        <td>Send travel protection application data to generate policy</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 id='json-request-body-data'>JSON Request Body Data:</h3>
+            <p><strong>Main attribute</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>JSON Attribute</th>
+                        <th>Definition</th>
+                        <th>Required</th>
+                        <th>Validation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>product</td>
+                        <td>&quot;travel-protection&quot;</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>reference_id</td>
+                        <td>reference id from to uniquely identify a request, must unique for every travel protection registration</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>policy_insured</td>
+                        <td>Person who will be insured by insurance</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>policy_beneficiary</td>
+                        <td>Person who will receive the death benefit in the event of the insured death</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>flight_information</td>
+                        <td>Flight Information. <strong>Possible Values</strong>: (1,2,3) 0 =&gt; (Departure) 1 =&gt; (Departure Transit) 2 =&gt; (Return) 3 =&gt; (Return Transit)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>booking_code</td>
+                        <td>Passenger flight booking code</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>inception_date</td>
+                        <td>Initial period of insurance coverage (YYYY-MM-DD)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>package_id</td>
+                        <td>travel protection package id. <strong>Possible Values</strong>: (1,2,3,4,5,6,7,8,9,10) 1 =&gt; 1 =&gt; PLAN A DOMESTIK ONEWAY , 2 =&gt; PLAN B DOMESTIK ONEWAY , 3 =&gt; PLAN A DOMESTIK ROUNDTRIP , 4 =&gt; PLAN B DOMESTIK ROUNDTRIP , 5 =&gt; PLAN A OVERSEAS ONE WAY , 6 =&gt; PLAN A OVERSEAS ROUNDTRIP , 7 =&gt; PLAN C OVERSEAS ONE WAY , 8 =&gt; PLAN C OVERSEAS ROUNDTRIP , 9 =&gt; PLAN B OVERSEAS ONE WAY , 10 =&gt; PLAN B OVERSEAS ROUNDTRIP</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>travel_type</td>
+                        <td>Travel type to know wether the passenger have one way trip or round trip. <strong>Possible Values</strong>: (1, 2) 1 =&gt; (One way trip), 2 =&gt;(Round trip)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>transit_type</td>
+                        <td>Transit type to know what transits the passenger&#39;s flight has. <strong>Possible Values</strong>: (0,1,2,3) 0 =&gt; (No transits), 1 =&gt; (Transit on departure), 2 =&gt; (Transit on return), 3 =&gt; (Transit on both departure and return)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>travel_destination</td>
+                        <td>passenger travel destination <strong>Possible Values</strong>: (1,2) 1 =&gt; (Domestic flight in Indonesia), 2 =&gt; (International flight)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>trip_reason</td>
+                        <td>passenger trip reason. <strong>Possible Values</strong> (1,2,3,4,5,6) 1 =&gt; (Wisata), 2 =&gt; (Bisnis), 3 =&gt; (Kunjungan Keluarga), 4 =&gt; (Seminar), 5 =&gt; (Training), 6 =&gt; (Tugas Kantor)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>note</td>
+                        <td>Note for description</td>
+                        <td>No</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <aside class="notice">If package is for domestic flight, then travel_destination value must be 1 (Domestic flight in Indonesia) - If package is for international flight, then travel_destination value must be 2 (International flight)
+            </aside>
+            <p><strong>policy_insured attribute</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>JSON Attribute</th>
+                        <th>Definition</th>
+                        <th>Required</th>
+                        <th>Validation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>insured name</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>gender</td>
+                        <td>insured</td>
+                        <td>No</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>date_of_birth</td>
+                        <td>insured date of birth (YYYY-MM-DD)</td>
+                        <td>No</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>identity_type</td>
+                        <td>the identity used in travel protection registration <strong>Possible Values:</strong> 1 =&gt; (KTP), 2 =&gt; (SIM), 3 =&gt; (PASSPORT)</td>
+                        <td>No</td>
+                        <td>Max length 100</td>
+                    </tr>
+                    <tr>
+                        <td>address</td>
+                        <td>insured address</td>
+                        <td>Yes</td>
+                        <td>Max length 500</td>
+                    </tr>
+                    <tr>
+                        <td>city</td>
+                        <td>city where insured live</td>
+                        <td>Yes</td>
+                        <td>Max length 200</td>
+                    </tr>
+                    <tr>
+                        <td>zip_code</td>
+                        <td>insured postal code</td>
+                        <td>Yes</td>
+                        <td>Max length 100</td>
+                    </tr>
+                    <tr>
+                        <td>phone_no</td>
+                        <td>insured phone number</td>
+                        <td>Yes</td>
+                        <td>Max length 100</td>
+                    </tr>
+                    <tr>
+                        <td>handphone_no</td>
+                        <td>insured handphone number</td>
+                        <td>No</td>
+                        <td>Max length 100</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>insured email address</td>
+                        <td>Yes</td>
+                        <td>Max length 200</td>
+                    </tr>
+                    <tr>
+                        <td>policy_holder_status</td>
+                        <td>status to verify insured is a policy holder <strong>Possible Values:</strong> 1 =&gt; (Policy Holder), 2 =&gt; (Participant)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>insured_status</td>
+                        <td>insured family status <strong>Possible Values:</strong> 1 =&gt; (Insured), 2 =&gt; (Spouse), 3 =&gt; (Child) <strong>NOTE:</strong> If policy_holder_status is 1, then insured_status must be 1 (Insured) </td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>policy_beneficiary attribute</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>JSON Attribute</th>
+                        <th>Definition</th>
+                        <th>Required</th>
+                        <th>Validation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>benficary insurance name</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>relationship</td>
+                        <td>beneficiary relationship with policy holder <strong>Possible Values:</strong> (1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21) 1 =&gt; (Adik), 2 =&gt; (Anak), 3 =&gt; (Ayah), 4 =&gt; (Cucu), 5 =&gt; (Dealer), 6 =&gt; (Ibu), 7 =&gt; (Istri), 8 =&gt; (Kakak), 9 =&gt; (Kakek), 10 =&gt; (Keponakan), 11 =&gt; (Kerabat), 12 =&gt; (Kreditur), 13 =&gt; (Lembaga Pendidikan), 14(Majikan =&gt;), 15 =&gt; (Nenek), 16 =&gt; (Orang Tua), 17 =&gt; (Perusahaan =&gt;), 18 =&gt; (Pimpinan), 19 =&gt; (Saudara), 20 =&gt; (Sepupu), 21 =&gt; (Suami)</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id='travel-protection-status-api'>Travel Protection Status API</h2>
+            <blockquote>
+                <p>Sample URL Request body</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="err">#Body</span><span class="w"> </span><span class="err">accepts</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">references</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">post</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"ref1"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<blockquote>
-<p>The above code snippet returns would return:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"application_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APP-000000XXX"</span><span class="p">,</span><span class="w">
@@ -944,62 +931,96 @@ Signature of every product specific data is provided <a href="https://gitlab.com
 </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
 
 </span></code></pre>
-<p>Check the statuses of given policies</p>
-<h3 id='definition-2'>Definition</h3>
-<table><thead>
-<tr>
-<th>Endpoint</th>
-<th>HTTP Method</th>
-<th>Definition</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>/api/v2/policystatus/</td>
-<td>POST</td>
-<td>Check statuses of given policies</td>
-</tr>
-</tbody></table>
-<h1 id='errors'>Errors</h1>
-<p>Pasarpolis SDK uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request -- Your request sucks</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden -- Forbidden</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found -- The specified policy could not be found</td>
-</tr>
-<tr>
-<td>409</td>
-<td>Duplicate Request</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-</tr>
-</tbody></table>
-
-      </div>
-      <div class="dark-box">
-          <div class="lang-selector">
+            <p>Check the statuses of given policies</p>
+            <h3 id='definition-2'>Definition</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>HTTP Method</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v2/policystatus/</td>
+                        <td>POST</td>
+                        <td>Check statuses of given policies</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1 id='errors'>Errors</h1>
+            <p>Pasarpolis SDK uses the following error codes:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Error Code</th>
+                        <th>Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>400</td>
+                        <td>Bad Request -- Something wrong in request payload. Check API documentation describing payload of the endpoint you are calling.</td>
+                    </tr>
+                    <tr>
+                        <td>403</td>
+                        <td>Forbidden -- Server is not able to validate HMAC signature of this request. Make sure you are calculating the signature exactly same way as described by the documentation.</td>
+                    </tr>
+                    <tr>
+                        <td>404</td>
+                        <td>Not Found -- The specified API or resource could not be found. Refer API documentation to verify you are calling the correct endpoint.</td>
+                    </tr>
+                    <tr>
+                        <td>409</td>
+                        <td>Duplicate Request. A previous request for same data and action has already been processed. Current response body contains information about already processed request e.g. ref and application number in case of policy creation.</td>
+                    </tr>
+                    <tr>
+                        <td>500</td>
+                        <td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h1 id="calculating-hmac">Calculating HMAC</h1>
+            <p>Every request needs to be signed and include the signature in request header.</p>
+            <p><strong>How to calculate the signature?</strong></p>
+            <p>First, you need to calculate string to be signed. String to sign can be obtained as:</p>
+            <div class="center-column"></div>
+            <pre class="highlight plaintext"><code>string_to_sign = VERB + "\n" + content_md5 + "\n" + content_type +
+              "\n" + timestamp + "\n" + api_path
+</code></pre>
+            <ul>
+                <li><strong>VERB</strong>: Http verb ( in upper case ) used to make the call e.g. GET, POST</li>
+                <li><strong>content_md5</strong>: MD5 hash of the request body. Also to be sent as 'Content-MD5' header. Should be empty string in case of get request</li>
+                <li><strong>content_type</strong>: Content-type of the request body. Also to be sent as 'Content-Type' header.</li>
+                <li><strong>timestamp</strong>: Current time in RFC2616 format. Eg: 'Mon, 16 Jul 2018 08:27:53 GMT'. Also send the date in 'X-PP-Date' header.</li>
+                <li><strong>api_path</strong>: Part of the URL after base domain and without query string (in lower case only). Eg: For http://sandbox-integrations.pasarpolis.com/api/v2/policydetails/?id=mypolicyid, api_path is /api/v2/policydetails/</li>
+            </ul>
+            <p>Calculate hmac for key ( received from PasarPolis ) and string_to_sign using sha256.</p>
+            <p>Final value to be used in 'Signature' header:</p>
+            <div class="center-column"></div>
+            <pre class="highlight plaintext"><code>base64encode(partner_code + ":" + base64encode(hmac_digest))
+  </code></pre>
+            <p>where <strong>partner_code</strong> is shared by PasarPolis and <strong>hmac_digest</strong> is digest of hmac calculated in previous step.</p>
+            <p>Values to be sent in Header:</p>
+            <div class="center-column"></div>
+            <pre class="highlight plaintext"><code>'Content-MD5': {content_md5}
+'Content-Type': {content_type}
+'X-PP-Date': {timestamp}
+'Partner-Code': {partner_id}
+'Signature': {hmac} as calculated above
+</code></pre>
+        </div>
+        <div class="dark-box">
+            <div class="lang-selector">
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="java">java</a>
                 <a href="#" data-language-name="go">go</a>
                 <a href="#" data-language-name="javascript">javascript</a>
-          </div>
-      </div>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>
