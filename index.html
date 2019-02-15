@@ -741,7 +741,10 @@ APP-000000224
                 <li><strong>timestamp</strong>: Current time in RFC2616 format. Eg: 'Mon, 16 Jul 2018 08:27:53 GMT'. Also send the date in 'X-PP-Date' header.</li>
                 <li><strong>api_path</strong>: Part of the URL after base domain and without query string (in lower case only). Eg: For http://sandbox-integrations.pasarpolis.com/api/v2/policydetails/?id=mypolicyid, api_path is /api/v2/policydetails/</li>
             </ul>
-            <p>Calculate hmac for key ( received from PasarPolis ) and string_to_sign using sha256.</p>
+            <p>Calculate hmac for partner_secret ( received from PasarPolis ) and string_to_sign using sha256.</p>
+            <div class="center-column"></div>
+            <pre class="highlight plaintext"><code>hmac_digest = hmac(partner_secret, string_to_sign, sha256).digest()
+  </code></pre>
             <p>Final value to be used in 'Signature' header:</p>
             <div class="center-column"></div>
             <pre class="highlight plaintext"><code>base64encode(partner_code + ":" + base64encode(hmac_digest))
