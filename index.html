@@ -249,6 +249,9 @@
                         <a href="#phone-protection-registration-api" class="toc-h2 toc-link" data-title="Phone Protection Registration API">Phone Protection Registration API</a>
                     </li>
                     <li>
+                        <a href="#phone-protection-aggregate-policy-api" class="toc-h2 toc-link" data-title="Phone Protection Aggregate Policy API">Phone Protection Aggregate Policy API</a>
+                    </li>
+                    <li>
                         <a href="#phone-protection-status-api" class="toc-h2 toc-link" data-title="Phone Protection Status API">Phone Protection Status API</a>
                     </li>
                 </ul>
@@ -423,6 +426,71 @@ APP-000000224
             <p>It will return a Policy object which contains:</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+            <h3 id='get-policy-status'>Create Aggregate Policy</h3>
+            <blockquote>
+                <p>Example code</p>
+            </blockquote>
+            </code></pre><pre class="highlight python tab-python"><code>
+<span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
+<span class="n">params1</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"John Doe"</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"email_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"john.doe@example.com"</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"phone_no"</span><span class="p">]</span><span class="o">=</span><span class="s2">"+6200000000000"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"reference_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"R1"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Apple"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"phone_no"</span><span class="p">]</span><span class="o">=</span><span class="s2">"iPhone X"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"email_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"2018-12-20"</span>
+<span class="n">params_list</span><span class="p"></span><span class="o">=</span>[</span><span class="n">params1</span><span class="p">, </span><span class="n">params1</span><span class="p">]
+<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_aggregate_policy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="n">params_list</span><span class="p">);</span>
+<span class="k">print</span><span class="p">(</span><span class="n">policies<span class="p">)</span>
+
+
+
+
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'phone-protection'</span>
+<span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="s2">"email_id"</span><span class="p">:</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+    <span class="s2">"phone_no"</span><span class="p">:</span> <span class="s2">"+6200000000000"</span><span class="p">,</span>
+    <span class="s2">"reference_id"</span><span class="p">:</span> <span class="s2">"R1"</span><span class="p">,</span>
+    <span class="s2">"make"</span><span class="p">:</span> <span class="s2">"Apple"</span><span class="p">,</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"iPhone X"</span><span class="p">,</span>
+    <span class="s2">"purchase_date"</span><span class="p">:</span> <span class="s2">"2018-12-20"</span><span class="p">,</span>
+    <span class="s2">"purchase_value"</span><span class="p">:</span> <span class="mi">32000.00</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
+
+<span class="cm">/** It will give response as promise */</span> 
+<span class="nx">createPolicy</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+
+</code></pre>
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight plaintext"><code>{
+  "efvrebrfdbvfd": Policy1 object,
+  "wfeergregverv": Policy2 object
+}
+
+
+</code></pre>
+            <p>Create aggregte policy will create a new policies for a product and will return a dictionary with reference number passed as key Policy object having application_number and reference_number as value.</p>
+            <p>For aggregate policy creation you will need Product and Params as parameters</p>
+            <p>where:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
+            <aside class="notice">
+                Refer to product specific specific documentation for details of payload.
+            </aside>
+            <p>It will return a list of Policy object which contains:</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
             <h3 id='get-policy-status'>Get Policy Status</h3>
             <blockquote>
                 <p>Example code</p>
@@ -535,6 +603,12 @@ APP-000000224
                         <td>click <a href="#phone-protection-registration-api">here</a></td>
                     </tr>
                     <tr>
+                        <td>/api/v2/createaggregatepolicy/</td>
+                        <td>POST</td>
+                        <td>Send phone protection application data to generate aggregate policy</td>
+                        <td>click <a href="#phone-protection-aggregate-policy-api">here</a></td>
+                    </tr>
+                    <tr>
                         <td>/api/v2/policystatus/</td>
                         <td>POST</td>
                         <td>Check Statuses of given policies</td>
@@ -584,6 +658,134 @@ APP-000000224
                 </tbody>
             </table>
             <h3 id='json-request-body-data'>JSON Request Body Data:</h3>
+            <p><strong>Main attribute</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>JSON Attribute</th>
+                        <th>Definition</th>
+                        <th>Required</th>
+                        <th>Validation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>product</td>
+                        <td>&quot;phone-protection&quot;</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>Name of the person purchasing insurance</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>email_id</td>
+                        <td>Email ID of the person purchasing insurance</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>phone_no</td>
+                        <td>Phone number of the person purchasing insurance</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>reference_id</td>
+                        <td>reference id from to uniquely identify a request, must unique for every phone protection registration</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>make</td>
+                        <td>Brand of the phone</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>model</td>
+                        <td>Model of the phone</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>purchase_date</td>
+                        <td>Date of purchase of the phone as mentioned in the invoice</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>purchase_value</td>
+                        <td>Purchase value of the phone as mentioned in the invoice</td>
+                        <td>Yes</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2 id='phone-protection-aggregate-policy-api'>Phone Protection Aggregate Policy API</h2>
+            <blockquote>
+                <p>Sample JSON Request Body</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"phone-protection"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6200000000001"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">"R1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"make"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Apple"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="mi">"iPhone X"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">"2018-12-20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">32000.00</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span>,<span class="p">{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"phone-protection"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grey Jone"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grey.jone@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6200000000002"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">"R2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"make"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Samsung"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Samsung S10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">"2018-12-20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">32000.00</span><span class="p">,</span><span class="w">
+</span><span class="p">}]</span>
+
+<span class="w">
+</span></code></pre>
+            <blockquote>
+                <p>The above code snippet returns would return:</p>
+            </blockquote>
+            <pre class="highlight json tab-json"><code>{
+    "policies": {
+        "R1": {
+            "application_no": "APP-000000144",
+            "ref": "d442dc31da8fbad82c68ba5d54fa87ca6a6a087f"
+        },
+         "R2": {
+            "application_no": "APP-000000145",
+            "ref": "bbf2dc31da8fbad82c68ba5d54fa87ca6a6a087f"
+        }
+    }
+}</code></pre>
+            <h3 id='definition'>Definition</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Endpoint</th>
+                        <th>HTTP Method</th>
+                        <th>Definition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/api/v2/createaggregatepolicy/</td>
+                        <td>POST</td>
+                        <td>Send phone protection application data to generate aggregate policy</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 id='json-request-body-data'>JSON Request Body Data (Array of Objects):</h3>
             <p><strong>Main attribute</strong></p>
             <table>
                 <thead>
