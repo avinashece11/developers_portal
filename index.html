@@ -2,317 +2,408 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Pasarpolis Developer Guide</title>
-    <style>
-        .highlight table td { padding: 5px; }
-        .highlight table pre { margin: 0; }
-        .highlight .gh {
-          color: #999999;
-        }
-        .highlight .sr {
-          color: #f6aa11;
-        }
-        .highlight .go {
-          color: #888888;
-        }
-        .highlight .gp {
-          color: #555555;
-        }
-        .highlight .gu {
-          color: #aaaaaa;
-        }
-        .highlight .nb {
-          color: #f6aa11;
-        }
-        .highlight .cm {
-          color: #75715e;
-        }
-        .highlight .cp {
-          color: #75715e;
-        }
-        .highlight .c1 {
-          color: #75715e;
-        }
-        .highlight .cs {
-          color: #75715e;
-        }
-        .highlight .c, .highlight .cd {
-          color: #75715e;
-        }
-        .highlight .err {
-          color: #960050;
-        }
-        .highlight .gr {
-          color: #960050;
-        }
-        .highlight .gt {
-          color: #960050;
-        }
-        .highlight .gd {
-          color: #49483e;
-        }
-        .highlight .gi {
-          color: #49483e;
-        }
-        .highlight .ge {
-          color: #49483e;
-        }
-        .highlight .kc {
-          color: #66d9ef;
-        }
-        .highlight .kd {
-          color: #66d9ef;
-        }
-        .highlight .kr {
-          color: #66d9ef;
-        }
-        .highlight .no {
-          color: #66d9ef;
-        }
-        .highlight .kt {
-          color: #66d9ef;
-        }
-        .highlight .mf {
-          color: #ae81ff;
-        }
-        .highlight .mh {
-          color: #ae81ff;
-        }
-        .highlight .il {
-          color: #ae81ff;
-        }
-        .highlight .mi {
-          color: #ae81ff;
-        }
-        .highlight .mo {
-          color: #ae81ff;
-        }
-        .highlight .m, .highlight .mb, .highlight .mx {
-          color: #ae81ff;
-        }
-        .highlight .sc {
-          color: #ae81ff;
-        }
-        .highlight .se {
-          color: #ae81ff;
-        }
-        .highlight .ss {
-          color: #ae81ff;
-        }
-        .highlight .sd {
-          color: #e6db74;
-        }
-        .highlight .s2 {
-          color: #e6db74;
-        }
-        .highlight .sb {
-          color: #e6db74;
-        }
-        .highlight .sh {
-          color: #e6db74;
-        }
-        .highlight .si {
-          color: #e6db74;
-        }
-        .highlight .sx {
-          color: #e6db74;
-        }
-        .highlight .s1 {
-          color: #e6db74;
-        }
-        .highlight .s {
-          color: #e6db74;
-        }
-        .highlight .na {
-          color: #a6e22e;
-        }
-        .highlight .nc {
-          color: #a6e22e;
-        }
-        .highlight .nd {
-          color: #a6e22e;
-        }
-        .highlight .ne {
-          color: #a6e22e;
-        }
-        .highlight .nf {
-          color: #a6e22e;
-        }
-        .highlight .vc {
-          color: #ffffff;
-        }
-        .highlight .nn {
-          color: #ffffff;
-        }
-        .highlight .nl {
-          color: #ffffff;
-        }
-        .highlight .ni {
-          color: #ffffff;
-        }
-        .highlight .bp {
-          color: #ffffff;
-        }
-        .highlight .vg {
-          color: #ffffff;
-        }
-        .highlight .vi {
-          color: #ffffff;
-        }
-        .highlight .nv {
-          color: #ffffff;
-        }
-        .highlight .w {
-          color: #ffffff;
-        }
-        .highlight {
-          color: #ffffff;
-        }
-        .highlight .n, .highlight .py, .highlight .nx {
-          color: #ffffff;
-        }
-        .highlight .ow {
-          color: #f92672;
-        }
-        .highlight .nt {
-          color: #f92672;
-        }
-        .highlight .k, .highlight .kv {
-          color: #f92672;
-        }
-        .highlight .kn {
-          color: #f92672;
-        }
-        .highlight .kp {
-          color: #f92672;
-        }
-        .highlight .o {
-          color: #f92672;
-        }
-    </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-    <script src="javascripts/all.js"></script>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Pasarpolis Developer Guide</title>
+  <style>
+    .highlight table td {
+      padding: 5px;
+    }
+
+    .highlight table pre {
+      margin: 0;
+    }
+
+    .highlight .gh {
+      color: #999999;
+    }
+
+    .highlight .sr {
+      color: #f6aa11;
+    }
+
+    .highlight .go {
+      color: #888888;
+    }
+
+    .highlight .gp {
+      color: #555555;
+    }
+
+    .highlight .gu {
+      color: #aaaaaa;
+    }
+
+    .highlight .nb {
+      color: #f6aa11;
+    }
+
+    .highlight .cm {
+      color: #75715e;
+    }
+
+    .highlight .cp {
+      color: #75715e;
+    }
+
+    .highlight .c1 {
+      color: #75715e;
+    }
+
+    .highlight .cs {
+      color: #75715e;
+    }
+
+    .highlight .c,
+    .highlight .cd {
+      color: #75715e;
+    }
+
+    .highlight .err {
+      color: #960050;
+    }
+
+    .highlight .gr {
+      color: #960050;
+    }
+
+    .highlight .gt {
+      color: #960050;
+    }
+
+    .highlight .gd {
+      color: #49483e;
+    }
+
+    .highlight .gi {
+      color: #49483e;
+    }
+
+    .highlight .ge {
+      color: #49483e;
+    }
+
+    .highlight .kc {
+      color: #66d9ef;
+    }
+
+    .highlight .kd {
+      color: #66d9ef;
+    }
+
+    .highlight .kr {
+      color: #66d9ef;
+    }
+
+    .highlight .no {
+      color: #66d9ef;
+    }
+
+    .highlight .kt {
+      color: #66d9ef;
+    }
+
+    .highlight .mf {
+      color: #ae81ff;
+    }
+
+    .highlight .mh {
+      color: #ae81ff;
+    }
+
+    .highlight .il {
+      color: #ae81ff;
+    }
+
+    .highlight .mi {
+      color: #ae81ff;
+    }
+
+    .highlight .mo {
+      color: #ae81ff;
+    }
+
+    .highlight .m,
+    .highlight .mb,
+    .highlight .mx {
+      color: #ae81ff;
+    }
+
+    .highlight .sc {
+      color: #ae81ff;
+    }
+
+    .highlight .se {
+      color: #ae81ff;
+    }
+
+    .highlight .ss {
+      color: #ae81ff;
+    }
+
+    .highlight .sd {
+      color: #e6db74;
+    }
+
+    .highlight .s2 {
+      color: #e6db74;
+    }
+
+    .highlight .sb {
+      color: #e6db74;
+    }
+
+    .highlight .sh {
+      color: #e6db74;
+    }
+
+    .highlight .si {
+      color: #e6db74;
+    }
+
+    .highlight .sx {
+      color: #e6db74;
+    }
+
+    .highlight .s1 {
+      color: #e6db74;
+    }
+
+    .highlight .s {
+      color: #e6db74;
+    }
+
+    .highlight .na {
+      color: #a6e22e;
+    }
+
+    .highlight .nc {
+      color: #a6e22e;
+    }
+
+    .highlight .nd {
+      color: #a6e22e;
+    }
+
+    .highlight .ne {
+      color: #a6e22e;
+    }
+
+    .highlight .nf {
+      color: #a6e22e;
+    }
+
+    .highlight .vc {
+      color: #ffffff;
+    }
+
+    .highlight .nn {
+      color: #ffffff;
+    }
+
+    .highlight .nl {
+      color: #ffffff;
+    }
+
+    .highlight .ni {
+      color: #ffffff;
+    }
+
+    .highlight .bp {
+      color: #ffffff;
+    }
+
+    .highlight .vg {
+      color: #ffffff;
+    }
+
+    .highlight .vi {
+      color: #ffffff;
+    }
+
+    .highlight .nv {
+      color: #ffffff;
+    }
+
+    .highlight .w {
+      color: #ffffff;
+    }
+
+    .highlight {
+      color: #ffffff;
+    }
+
+    .highlight .n,
+    .highlight .py,
+    .highlight .nx {
+      color: #ffffff;
+    }
+
+    .highlight .ow {
+      color: #f92672;
+    }
+
+    .highlight .nt {
+      color: #f92672;
+    }
+
+    .highlight .k,
+    .highlight .kv {
+      color: #f92672;
+    }
+
+    .highlight .kn {
+      color: #f92672;
+    }
+
+    .highlight .kp {
+      color: #f92672;
+    }
+
+    .highlight .o {
+      color: #f92672;
+    }
+  </style>
+  <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+  <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+  <script src="javascripts/all.js"></script>
 </head>
 
-<body class="index" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;go&quot;,&quot;javascript&quot;]">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
-    <div class="toc-wrapper">
-        <img src="images/logo.png" class="logo" alt="Logo" />
-        <div class="lang-selector">
-            <a href="#" data-language-name="ruby">ruby</a>
-            <a href="#" data-language-name="python">python</a>
-            <a href="#" data-language-name="java">java</a>
-            <a href="#" data-language-name="go">go</a>
-            <a href="#" data-language-name="javascript">javascript</a>
-        </div>
-        <div class="search">
-            <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-        <ul id="toc" class="toc-list-h1">
-            <li>
-                <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-            </li>
-            <li>
-                <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-            </li>
-            <li>
-                <a href="#initialization" class="toc-h1 toc-link" data-title="Initialization">Initialization</a>
-            </li>
-            <li>
-                <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
-                <ul class="toc-list-h2">
-                    <li>
-                        <a href="#phone-protection" class="toc-h2 toc-link" data-title="Phone Protection">Phone Protection</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#api-references" class="toc-h1 toc-link" data-title="API References">API References</a>
-                <ul class="toc-list-h2">
-                    <li>
-                        <a href="#urls" class="toc-h2 toc-link" data-title="URLs">URLs</a>
-                    </li>
-                    <li>
-                        <a href="#api-routes" class="toc-h2 toc-link" data-title="API Routes">API Routes</a>
-                    </li>
-                    <li>
-                        <a href="#phone-protection-registration-api" class="toc-h2 toc-link" data-title="Phone Protection Registration API">Phone Protection Registration API</a>
-                    </li>
-                    <li>
-                        <a href="#phone-protection-status-api" class="toc-h2 toc-link" data-title="Phone Protection Status API">Phone Protection Status API</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-            </li>
-            <li>
-              <a href="#calculating-hmac" class="toc-h1 toc-link" data-title="Calculating HMAC">Calculating HMAC</a>
+<body class="index"
+  data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;java&quot;,&quot;go&quot;,&quot;javascript&quot;,&quot;php&quot;]">
+  <a href="#" id="nav-button">
+    <span>
+      NAV
+      <img src="images/navbar.png" alt="Navbar" />
+    </span>
+  </a>
+  <div class="toc-wrapper">
+    <img src="images/logo.png" class="logo" alt="Logo" />
+    <div class="lang-selector">
+      <a href="#" data-language-name="ruby">ruby</a>
+      <a href="#" data-language-name="python">python</a>
+      <a href="#" data-language-name="java">java</a>
+      <a href="#" data-language-name="go">go</a>
+      <a href="#" data-language-name="javascript">javascript</a>
+      <a href="#" data-language-name="php">php</a>
+    </div>
+    <div class="search">
+      <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+    <ul id="toc" class="toc-list-h1">
+      <li>
+        <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+      </li>
+      <li>
+        <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+      </li>
+      <li>
+        <a href="#initialization" class="toc-h1 toc-link" data-title="Initialization">Initialization</a>
+      </li>
+      <li>
+        <a href="#guide" class="toc-h1 toc-link" data-title="Guide">Guide</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#phone-protection" class="toc-h2 toc-link" data-title="Phone Protection">Phone Protection</a>
           </li>
         </ul>
-    </div>
-    <div class="page-wrapper">
-        <div class="dark-box"></div>
-        <div class="content">
-            <h1 id='introduction'>Introduction</h1>
-            <p>Welcome to Pasarpolis developer guide. You can use our API to access API endpoints for policy.</p>
-            <p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-            <h1 id='authentication'>Authentication</h1>
-            <p>We use HMAC based authetication behind the scenes.</p>
-            <p>You just need PartnerCode and PartnerSecret to get started. (details given in the Initialization section)</p>
-            <p>To know more about HMAC authentication click <a href="https://en.wikipedia.org/wiki/HMAC">here</a></p>
-            <h1 id='initialization'>Initialization</h1>
-            <blockquote>
-                <p>To initialize, use this code:</p>
-            </blockquote>
-            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
+      </li>
+      <li>
+        <a href="#api-references" class="toc-h1 toc-link" data-title="API References">API References</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#urls" class="toc-h2 toc-link" data-title="URLs">URLs</a>
+          </li>
+          <li>
+            <a href="#api-routes" class="toc-h2 toc-link" data-title="API Routes">API Routes</a>
+          </li>
+          <li>
+            <a href="#phone-protection-registration-api" class="toc-h2 toc-link"
+              data-title="Phone Protection Registration API">Phone Protection Registration API</a>
+          </li>
+          <li>
+            <a href="#phone-protection-aggregate-policy-api" class="toc-h2 toc-link"
+              data-title="Phone Protection Aggregate Policy API">Phone Protection Aggregate Policy API</a>
+          </li>
+          <li>
+            <a href="#phone-protection-status-api" class="toc-h2 toc-link"
+              data-title="Phone Protection Status API">Phone Protection Status API</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+      </li>
+      <li>
+        <a href="#calculating-hmac" class="toc-h1 toc-link" data-title="Calculating HMAC">Calculating HMAC</a>
+      </li>
+    </ul>
+  </div>
+  <div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+      <h1 id='introduction'>Introduction</h1>
+      <p>Welcome to Pasarpolis developer guide. You can use our API to access API endpoints for policy.</p>
+      <p>We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right,
+        and you can switch the programming language of the examples with the tabs in the top right.</p>
+      <h1 id='authentication'>Authentication</h1>
+      <p>We use HMAC based authetication behind the scenes.</p>
+      <p>You just need PartnerCode and PartnerSecret to get started. (details given in the Initialization section)</p>
+      <p>To know more about HMAC authentication click <a href="https://en.wikipedia.org/wiki/HMAC">here</a></p>
+      <h1 id='initialization'>Initialization</h1>
+      <blockquote>
+        <p>To initialize, use this code:</p>
+      </blockquote>
+      <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
 
 <span class="no">PasarpolisSdk</span><span class="p">.</span><span class="nf">init</span><span class="p">(</span><span class="o">&lt;</span><span class="no">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="no">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="no">Host</span><span class="o">&gt;</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasapolis</span> <span class="kn">import</span> <span class="n">Client</span>
+</code></pre>
+      <pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasapolis</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="n">Client</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="o">&lt;</span><span class="n">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Host</span><span class="o">&gt;</span><span class="p">)</span>
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.PasarpolisClient</span><span class="o">;</span>
+</code></pre>
+      <pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.PasarpolisClient</span><span class="o">;</span>
 
 <span class="n">PasarpolisClient</span><span class="o">.</span><span class="na">init</span><span class="o">(&lt;</span><span class="n">PartnerCode</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">PartnerSecret</span><span class="o">&gt;,</span> <span class="o">&lt;</span><span class="n">Host</span><span class="o">&gt;);</span>
 
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
+</code></pre>
+      <pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
   </span><span class="s">"gitlab.com/pasarpolis/go-sdk"</span><span class="x">
 </span><span class="p">)</span><span class="x">
 
 </span><span class="n">pasarpolis</span><span class="o">.</span><span class="n">InitClient</span><span class="p">(</span><span class="o">&lt;</span><span class="n">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span><span class="x"> </span><span class="o">&lt;</span><span class="n">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span><span class="x"> </span><span class="o">&lt;</span><span class="n">Host</span><span class="o">&gt;</span><span class="p">);</span><span class="x">
 
-</span></code></pre><pre class="highlight javascript tab-javascript"><code>
+</span></code></pre>
+      <pre class="highlight javascript tab-javascript"><code>
 <span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
 
 </code></pre>
-            <p>For Initilization you need PartnerCode, PartnerSecret and Host.</p>
-            <p><strong>PartnerCode</strong> (string) : Provided by Pasarpolis for Authentication.</p>
-            <p><strong>PartnerSecret</strong> (string) : Secret Key provided by Pasarpolis.</p>
-            <p><strong>Host</strong> (string) : Fully qualified domain name as specified below.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Sandbox: https://integrations-sandbox.pasarpolis.com</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Production: https://integrations.pasarpolis.com</p>
-            <aside class="notice">
-                Initialize the client before calling any functionality of SDK else it will raise error.<br />
-                Please make sure you initialize client only once i.e. at start of your app else it will raise error.
-            </aside>
-            <h1 id='guide'>Guide</h1><h2 id='phone-protection'>Phone Protection</h2>
-            <p>This guide will help you use our SDK for Phone Protection.</p>
-            <h3 id='create-policy'>Create Policy</h3>
-            <blockquote>
-                <p>Example code:</p>
-            </blockquote>
-            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
+
+<pre class="highlight php tab-php"><code>
+  <span class="nx">require_once</span><span class="p">(</span><span class="s1">'pasarpolis/client.php'</span><span class="p">)</span>
+  <span class="kr">$</span><span class="nx">clientObj</span> <span class="o">=</span> <span class="nx">new client</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">HOST</span><span class="o">&gt;</span><span class="p">)</span>
+</code></pre>
+      <p>For Initilization you need PartnerCode, PartnerSecret and Host.</p>
+      <p><strong>PartnerCode</strong> (string) : Provided by Pasarpolis for Authentication.</p>
+      <p><strong>PartnerSecret</strong> (string) : Secret Key provided by Pasarpolis.</p>
+      <p><strong>Host</strong> (string) : Fully qualified domain name as specified below.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Sandbox: https://integrations-sandbox.pasarpolis.com</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Production: https://integrations.pasarpolis.com</p>
+      <aside class="notice">
+        Initialize the client before calling any functionality of SDK else it will raise error.<br />
+        Please make sure you initialize client only once i.e. at start of your app else it will raise error.
+      </aside>
+      <h1 id='guide'>Guide</h1>
+      <h2 id='phone-protection'>Phone Protection</h2>
+      <p>This guide will help you use our SDK for Phone Protection.</p>
+      <h3 id='create-policy'>Create Policy</h3>
+      <blockquote>
+        <p>Example code:</p>
+      </blockquote>
+      <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s2">"pasarpolis_sdk"</span>
 
 <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"John Doe"</span>
@@ -323,11 +414,12 @@
 <span class="n">params</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span><span class="o">=</span><span class="s2">"iPhone X"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_date"</span><span class="p">]</span><span class="o">=</span><span class="s2">"2018-12-20"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_value"</span><span class="p">]</span><span class="o">=</span><span class="kp">32000.00</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_policy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_policy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
 <span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">reference_number</span>
 <span class="nb">puts</span> <span class="n">policy</span><span class="p">.</span><span class="nf">application_number</span>
 
-</code></pre><pre class="highlight python tab-python"><code>
+</code></pre>
+      <pre class="highlight python tab-python"><code>
 <span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
 
 <span class="n">params</span> <span class="o">=</span> <span class="p">{}</span>
@@ -339,12 +431,13 @@
 <span class="n">params</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span><span class="o">=</span><span class="s2">"iPhone X"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_date"</span><span class="p">]</span><span class="o">=</span><span class="s2">"2018-12-20"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_value"</span><span class="p">]</span><span class="o">=</span><span class="kp">32000.00</span>
-<span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">create_policy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">create_policy</span><span class="p">(</span><span class="s">"phone-protection"</span><span class="p">,</span> <span class="n">params</span><span class="p">);</span>
 <span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">reference_number</span><span class="p">,</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">application_number</span><span class="p">)</span>
 
 
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+</code></pre>
+      <pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
 
 <span class="k">try</span> <span class="o">{</span>
@@ -357,14 +450,15 @@
   <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"model"</span><span class="o">,</span><span class="kc">"iPhone X"</span><span class="o">);</span>
   <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"purchase_date"</span><span class="o">,</span><span class="kc">"2018-12-20"</span><span class="o">);</span>
   <span class="n">params</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"purchase_value"</span><span class="o">,</span><span class="kc">32000.00</span><span class="o">);</span>
-  <span class="n">Policy</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">createPolicy</span><span class="o">(</span><span class="s">"travel-protection"</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>  
+  <span class="n">Policy</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">createPolicy</span><span class="o">(</span><span class="s">"phone-protection"</span><span class="o">,</span> <span class="n">params</span><span class="o">);</span>  
   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">referenceNumber</span><span class="o">);</span>
   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">policy</span><span class="o">.</span><span class="na">applicationNumber</span><span class="o">);</span>
 <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span>  <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// Error Handling part</span>
 <span class="o">}</span>
 
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
+</code></pre>
+      <pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
   </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
   </span><span class="s">"fmt"</span><span class="x">
 </span><span class="p">)</span><span class="x">
@@ -379,14 +473,15 @@
 <span class="n">params</span><span class="p">[</span><span class="s2">"model"</span><span class="p">]</span><span class="o">=</span><span class="s2">"iPhone X"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_date"</span><span class="p">]</span><span class="o">=</span><span class="s2">"2018-12-20"</span>
 <span class="n">params</span><span class="p">[</span><span class="s2">"purchase_value"</span><span class="p">]</span><span class="o">=</span><span class="kp">32000.00</span>
-</span><span class="n">policy</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">CreatePolicy</span><span class="p">(</span><span class="s">"travel-protection"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">);</span><span class="x">
+</span><span class="n">policy</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">CreatePolicy</span><span class="p">(</span><span class="s">"phone-protection"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">);</span><span class="x">
 </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">referenceNumber</span><span class="p">);</span><span class="x">
 </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policy</span><span class="o">.</span><span class="n">applicationNumber</span><span class="p">);</span><span class="x">
 
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
+</span></code></pre>
+      <pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
 
-<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'travel-protection'</span>
+<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'phone-protection'</span>
 <span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
     <span class="s2">"email_id"</span><span class="p">:</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
@@ -397,7 +492,7 @@
     <span class="s2">"purchase_date"</span><span class="p">:</span> <span class="s2">"2018-12-20"</span><span class="p">,</span>
     <span class="s2">"purchase_value"</span><span class="p">:</span> <span class="mi">32000.00</span>
 <span class="p">}</span>
-<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"travel-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
 
 <span class="cm">/** It will give response as promise */</span> 
 <span class="nx">createPolicy</span>
@@ -405,43 +500,164 @@
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
 
 </code></pre>
-            <blockquote>
-                <p>The above code snippet returns would return:</p>
-            </blockquote>
-            <pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
+
+      <pre class="highlight php tab-php"><code><span class="nx">require_once</span><span class="p">(</span><span class="s1">'pasarpolis/client.php'</span><span class="p">)</span>
+
+<span class="kr">$policyObj</span> <span class="o">=</span> <span class="s2"><span class="kt">new</span> <span class="s2">policy($params);</span></span>
+<span class="kr">$params</span> <span class="o">=</span> <span class="s2">Array();</span>
+<span class="kr">$params["name"]</span> <span class="o">=</span> <span class="s2">"Jacob";</span>
+<span class="kr">$params["email_id"]</span> <span class="o">=</span> <span class="s2">"john.doe@example.com"</span>
+<span class="kr">$params["phone_no"]</span> <span class="o">=</span> <span class="s2">"+6200000000000"</span>
+<span class="kr">$params["reference_id"]</span> <span class="o">=</span> <span class="s2">"R1"</span>
+<span class="kr">$params["make"]</span> <span class="o">=</span> <span class="s2">"Apple"</span>
+<span class="kr">$params["model"]</span> <span class="o">=</span> <span class="s2">"iPhone X"</span>
+<span class="kr">$params["purchase_date"]</span> <span class="o">=</span> <span class="s2">"2018-12-20"</span>
+<span class="kr">$params["purchase_value"]</span> <span class="o">=</span> <span class="s2">32000.00;</span>
+<span class="kr">$params["last_property"]</span> <span class="o">=</span> <span class="s2">true;</span>
+<span class="kr">$policy</span> <span class="o">=</span> <span class="s2">$policyObj<span class="vg">-></span>create_policy<span class="vg">(</span>"gadget-rental-protection", $params, $clientObj<span class="vg">)</span>;</span>
+<span class="vg">print_r</span><span class="vg">(</span><span class="s2">$policy<span class="vg">[</span>'reference_number'<span class="vg">]</span><span class="vg">)</span>;</span>
+<span class="kr">echo</span> <span class="s2">'<<span class="s2">br</span>>';</span></span>
+<span class="vg">print_r</span><span class="vg">(</span><span class="s2">$policy<span class="vg">[</span>'application_number'<span class="vg">]</span><span class="vg">)</span>;</span>
+
+      </code></pre>
+      <blockquote>
+        <p>The above code snippet returns would return:</p>
+      </blockquote>
+      <pre class="highlight plaintext"><code>d77d436ad9485b86b8a0c18c3d2f70f77a10c43d
 APP-000000224
 
 </code></pre>
-            <p>The above action will create a new policy</p>
-            <p>For policy creation you will need Product and Params as parameters</p>
-            <p>where:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
-            <aside class="notice">
-                Refer to product specific specific documentation for details of payload.
-            </aside>
-            <p>It will return a Policy object which contains:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-            <h3 id='get-policy-status'>Get Policy Status</h3>
-            <blockquote>
-                <p>Example code</p>
-            </blockquote>
-            <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
+      <p>The above action will create a new policy</p>
+      <p>For policy creation you will need Product and Params as parameters</p>
+      <p>where:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
+      <aside class="notice">
+        Refer to product specific specific documentation for details of payload.
+      </aside>
+      <p>It will return a Policy object which contains:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis
+        for future reference.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+      <h3 id='get-policy-status'>Create Aggregate Policy</h3>
+      <blockquote>
+        <p>Example code</p>
+      </blockquote>
+      </code>
+      </pre>
+      <pre class="highlight python tab-python"><code>
+<span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
+<span class="n">params1</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">params2</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"John Doe"</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"email_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"john.doe@example.com"</span>
+<span class="n">params1</span><span class="p">[</span><span class="s2">"phone_no"</span><span class="p">]</span><span class="o">=</span><span class="s2">"+6200000000000"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"reference_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"R1"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span><span class="o">=</span><span class="s2">"Apple"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"phone_no"</span><span class="p">]</span><span class="o">=</span><span class="s2">"iPhone X"</span>
+<span class="n">params2</span><span class="p">[</span><span class="s2">"email_id"</span><span class="p">]</span><span class="o">=</span><span class="s2">"2018-12-20"</span>
+<span class="n">params_list</span><span class="p"></span><span class="o">=</span>[</span><span class="n">params1</span><span class="p">, </span><span class="n">params1</span><span class="p">]
+<span class="n">policy</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">create_aggregate_policy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="n">params_list</span><span class="p">);</span>
+<span class="k">print</span><span class="p">(</span><span class="n">policies<span class="p">)</span>
+
+
+
+
+</span></code></pre>
+      <pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PartnerCode</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">PartnerSecret</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="nx">Host</span><span class="o">&gt;</span><span class="p">)</span>
+
+<span class="kr">const</span> <span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'phone-protection'</span>
+<span class="kr">const</span> <span class="nx">params</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+    <span class="s2">"email_id"</span><span class="p">:</span> <span class="s2">"john.doe@example.com"</span><span class="p">,</span>
+    <span class="s2">"phone_no"</span><span class="p">:</span> <span class="s2">"+6200000000000"</span><span class="p">,</span>
+    <span class="s2">"reference_id"</span><span class="p">:</span> <span class="s2">"R1"</span><span class="p">,</span>
+    <span class="s2">"make"</span><span class="p">:</span> <span class="s2">"Apple"</span><span class="p">,</span>
+    <span class="s2">"model"</span><span class="p">:</span> <span class="s2">"iPhone X"</span><span class="p">,</span>
+    <span class="s2">"purchase_date"</span><span class="p">:</span> <span class="s2">"2018-12-20"</span><span class="p">,</span>
+    <span class="s2">"purchase_value"</span><span class="p">:</span> <span class="mi">32000.00</span>
+<span class="p">}</span>
+<span class="kr">const</span> <span class="nx">createPolicy</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">createPolicy</span><span class="p">(</span><span class="s2">"phone-protection"</span><span class="p">,</span> <span class="nx">params</span><span class="p">)</span>
+
+<span class="cm">/** It will give response as promise */</span> 
+<span class="nx">createPolicy</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">response</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">))</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">))</span>
+
+</code></pre>
+
+<pre class="highlight php tab-php"><code><span class="nx">require_once</span><span class="p">(</span><span class="s1">'pasarpolis/client.php'</span><span class="p">)</span>
+
+  <span class="kr">$policyObj</span> <span class="o">=</span> <span class="s2"><span class="kt">new</span> <span class="s2">policy($params);</span></span>
+  <span class="kr">$params1</span> <span class="o">=</span> <span class="s2">Array();</span>
+  <span class="kr">$params1["name"]</span> <span class="o">=</span> <span class="s2">"Jacob";</span>
+  <span class="kr">$params1["email_id"]</span> <span class="o">=</span> <span class="s2">"john.doe@example.com"</span>
+  <span class="kr">$params1["phone_no"]</span> <span class="o">=</span> <span class="s2">"+6200000000000"</span>
+  <span class="kr">$params1["reference_id"]</span> <span class="o">=</span> <span class="s2">"R1"</span>
+  <span class="kr">$params1["make"]</span> <span class="o">=</span> <span class="s2">"Apple"</span>
+  <span class="kr">$params1["model"]</span> <span class="o">=</span> <span class="s2">"iPhone X"</span>
+  <span class="kr">$params1["purchase_date"]</span> <span class="o">=</span> <span class="s2">"2018-12-20"</span>
+  <span class="kr">$params1["purchase_value"]</span> <span class="o">=</span> <span class="s2">32000.00;</span>
+  <span class="kr">$params1["last_property"]</span> <span class="o">=</span> <span class="s2">true;</span>
+  <span class="kr">$params2</span> <span class="o">=</span> <span class="s2">Array();</span>
+  <span class="kr">$params2["name"]</span> <span class="o">=</span> <span class="s2">"Jacob";</span>
+  <span class="kr">$params2["email_id"]</span> <span class="o">=</span> <span class="s2">"john.doe@example.com"</span>
+  <span class="kr">$params2["phone_no"]</span> <span class="o">=</span> <span class="s2">"+6200000000000"</span>
+  <span class="kr">$params2["reference_id"]</span> <span class="o">=</span> <span class="s2">"R1"</span>
+  <span class="kr">$params2["make"]</span> <span class="o">=</span> <span class="s2">"Apple"</span>
+  <span class="kr">$params2["model"]</span> <span class="o">=</span> <span class="s2">"iPhone X"</span>
+  <span class="kr">$params2["purchase_date"]</span> <span class="o">=</span> <span class="s2">"2018-12-20"</span>
+  <span class="kr">$params2["purchase_value"]</span> <span class="o">=</span> <span class="s2">32000.00;</span>
+  <span class="kr">$params2["last_property"]</span> <span class="o">=</span> <span class="s2">true;</span>
+  <span class="kr">$param_list</span> <span class="o">=</span> <span class="s2">array<span class="vg">(</span>$params1<span class="vg">,</span> $params2<span class="vg">)</span>;</span>
+  <span class="kr">$policies</span> <span class="o">=</span> <span class="s2">Policy<span class="vg">.</span>create_aggregate_policy<span class="vg">(</span> "travel-protection"<span class="vg">,</span>$param_list <span class="vg">,</span>$clientObj<span class="vg">)</span>;</span>
+  <span class="vg">print_r</span><span class="vg">(</span><span class="s2">$policies<span class="vg">)</span>;</span>
+  
+        </code></pre>
+      <blockquote>
+        <p>The above code snippet returns would return:</p>
+      </blockquote>
+      <pre class="highlight plaintext"><code>{
+  "efvrebrfdbvfd": Policy1 object,
+  "wfeergregverv": Policy2 object
+}
+
+</code></pre>
+      <p>Create aggregte policy will create a new policies for a product and will return a dictionary with reference
+        number passed as key Policy object having application_number and reference_number as value.</p>
+      <p>For aggregate policy creation you will need Product and Params as parameters</p>
+      <p>where:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Product</strong> : Type of product for which policy is being created.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>Params</strong> : Product specific data to be sent.</p>
+      <aside class="notice">
+        Refer to product specific specific documentation for details of payload.
+      </aside>
+      <p>It will return a list of Policy object which contains:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis
+        for future reference.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+      <h3 id='get-policy-status'>Get Policy Status</h3>
+      <blockquote>
+        <p>Example code</p>
+      </blockquote>
+      <pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'pasarpolis_sdk'</span>
 
 
 <span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
 <span class="n">policies</span> <span class="o">=</span> <span class="no">Pasarpolis</span><span class="o">::</span><span class="no">Policy</span><span class="p">.</span><span class="nf">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
 <span class="nb">puts</span> <span class="n">policies</span>
 
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
+</code></pre>
+      <pre class="highlight python tab-python"><code><span class="kn">from</span> <span class="nn">pasarpolis</span> <span class="kn">import</span> <span class="n">Policy</span>
 
 
 <span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">]</span>
 <span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="n">get_policy_status</span><span class="p">(</span><span class="n">refs</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">policies</span><span class="p">)</span>
 
-</code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
+</code></pre>
+      <pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.pasarpolis.sdk.models.Policy</span><span class="o">;</span>
 <span class="k">try</span> <span class="o">{</span>  
   <span class="n">String</span><span class="o">[]</span> <span class="n">refs</span> <span class="o">=</span> <span class="o">{</span><span class="s">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="o">};</span>
   <span class="n">Policy</span><span class="o">[]</span> <span class="n">policies</span> <span class="o">=</span> <span class="n">Policy</span><span class="o">.</span><span class="na">getPolicyStatus</span><span class="o">(</span><span class="n">refs</span><span class="o">);</span>
@@ -450,7 +666,8 @@ APP-000000224
   <span class="c1">// Error Handling part</span>
 <span class="o">}</span>
 
-</code></pre><pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
+</code></pre>
+      <pre class="highlight go tab-go"><code><span class="k">import</span><span class="p">(</span><span class="x">
   </span><span class="n">pasarpolis_models</span><span class="x"> </span><span class="s">"gitlab.com/pasarpolis/go-sdk/models"</span><span class="x">
   </span><span class="s">"fmt"</span><span class="x">
 </span><span class="p">)</span><span class="x">
@@ -459,7 +676,8 @@ APP-000000224
 </span><span class="n">policies</span><span class="x"> </span><span class="o">=</span><span class="x"> </span><span class="n">pasarpolis_models</span><span class="o">.</span><span class="n">GetPolicyStatus</span><span class="p">(</span><span class="n">refs</span><span class="p">);</span><span class="x">
 </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">policies</span><span class="p">);</span><span class="x">
 
-</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
+</span></code></pre>
+      <pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">sdk</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'pasarpolis-sdk-nodejs'</span><span class="p">)</span>
 <span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">sdk</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">"DummyPartnerCode"</span><span class="p">,</span> <span class="s2">"DummyPartnerSecret"</span><span class="p">,</span> <span class="s2">"https://integrations.pasarpolis.com"</span><span class="p">)</span>
 
 <span class="kr">const</span> <span class="nx">getPolicyStatus</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">getPolicyStatus</span><span class="p">(</span><span class="s2">"48fc2801e487af79ef311621f63e4133c"</span><span class="p">)</span>
@@ -471,10 +689,18 @@ APP-000000224
 
 
 </code></pre>
-            <blockquote>
-                <p>The above will return:</p>
-            </blockquote>
-            <pre class="highlight plaintext"><code>[ 
+<pre class="highlight php tab-php"><code>
+  <span class="nx">require_once</span><span class="p">(</span><span class="s1">'pasarpolis/client.php'</span><span class="p">)</span>
+  <span class="kr">$</span><span class="nx">refs</span> <span class="o">=</span> <span class="nx">Array</span><span class="p">(</span><span class="nx">"d77d436ad9485b86b8a0c18c3d2f70f77a10c43d"</span><span class="p">)</span>
+  <span class="kr">$</span><span class="nx">policyObj</span> <span class="o">=</span> <span class="ss">new</span> policy<span class="p">(</span><span class="s1">$params</span><span class="p">)</span>
+  <span class="kr">$</span><span class="nx">policies</span> <span class="o">=</span> <span class="nx">$policyObj</span><span class="ni">-></span><span class="ni">get_policy_status</span><span class="ni">(</span><span class="s2">$refs<span>,</span>$clientObj<span class="ni">);</span>
+  <span class="nx">print_r</span><span class="p">(</span><span class="nx">$policies</span><span class="p">)</span>
+
+</code></pre>
+      <blockquote>
+        <p>The above will return:</p>
+      </blockquote>
+      <pre class="highlight plaintext"><code>[ 
     { 
         ref: '48fc2801e487af79ef311621f63e4133c',
         application_no: 'APP-000000XXX',
@@ -486,67 +712,76 @@ APP-000000224
     } 
 ]
 </code></pre>
-            <p>Get policy status will give status of the policy created by providing policy reference number. </p>
-            <p>It will return array of policies object being queried for.</p>
-            <p>where:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.</p>
-            <p>It will return an array of Policy objects. Each Policy object contains:</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis for future reference.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
-            <h1 id='api-references'>API References</h1><h3 id='urls'>URLs</h3>
-            <p>You can access our API using these URLS :</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Environment</th>
-                        <th>URL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Sandbox</td>
-                        <td>https://integrations-sandbox.pasarpolis.com</td>
-                    </tr>
-                    <tr>
-                        <td>Production</td>
-                        <td>https://integrations.pasarpolis.com</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3 id='api-routes'>API Routes</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Endpoint</th>
-                        <th>HTTP Method</th>
-                        <th></th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>/api/v2/createpolicy/</td>
-                        <td>POST</td>
-                        <td>Send phone protection application data to generate policy</td>
-                        <td>click <a href="#phone-protection-registration-api">here</a></td>
-                    </tr>
-                    <tr>
-                        <td>/api/v2/policystatus/</td>
-                        <td>POST</td>
-                        <td>Check Statuses of given policies</td>
-                        <td>click <a href="#phone-protection-status-api">here</a></td>
-                    </tr>
-                </tbody>
-            </table>
-            <h2 id='phone-protection-registration-api'>Phone Protection Registration API</h2>
-            <blockquote>
-                <p>Sample JSON Request Body</p>
-            </blockquote>
-            <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+      <p>Get policy status will give status of the policy created by providing policy reference number. </p>
+      <p>It will return array of policies object being queried for.</p>
+      <p>where:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>ReferenceNumbers</strong> : An array of string containing reference numbers.
+      </p>
+      <p>It will return an array of Policy objects. Each Policy object contains:</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>reference_number</strong> (string): Hexadecimal number provided by Pasarpolis
+        for future reference.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>application_number</strong> (string): Number provided for future reference.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>document_url</strong> (string): Url for policy document (if any).</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>policy_number</strong> (string): Number for policy.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status</strong> (string): Status of a given policy.</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>status_code</strong> (integer): Status code of a given policy.</p>
+      <h1 id='api-references'>API References</h1>
+      <h3 id='urls'>URLs</h3>
+      <p>You can access our API using these URLS :</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Environment</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sandbox</td>
+            <td>https://integrations-sandbox.pasarpolis.com</td>
+          </tr>
+          <tr>
+            <td>Production</td>
+            <td>https://integrations.pasarpolis.com</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id='api-routes'>API Routes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>HTTP Method</th>
+            <th></th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/api/v2/createpolicy/</td>
+            <td>POST</td>
+            <td>Send phone protection application data to generate policy</td>
+            <td>click <a href="#phone-protection-registration-api">here</a></td>
+          </tr>
+          <tr>
+            <td>/api/v2/createaggregatepolicy/</td>
+            <td>POST</td>
+            <td>Send phone protection application data to generate aggregate policy</td>
+            <td>click <a href="#phone-protection-aggregate-policy-api">here</a></td>
+          </tr>
+          <tr>
+            <td>/api/v2/policystatus/</td>
+            <td>POST</td>
+            <td>Check Statuses of given policies</td>
+            <td>click <a href="#phone-protection-status-api">here</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id='phone-protection-registration-api'>Phone Protection Registration API</h2>
+      <blockquote>
+        <p>Sample JSON Request Body</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"phone-protection"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
@@ -558,114 +793,243 @@ APP-000000224
   </span><span class="s2">"purchase_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">32000.00</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-            <blockquote>
-                <p>The above code snippet returns would return:</p>
-            </blockquote>
-            <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+      <blockquote>
+        <p>The above code snippet returns would return:</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"application_no"</span><span class="p">:</span><span class="s2">"APP-000008152"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ref"</span><span class="p">:</span><span class="s2">"e30ef12cafa6007868ad67fe3b6ee82095f8174e"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-            <p>Travel company or provider can register their passenger for travel insurance.</p>
-            <h3 id='definition'>Definition</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Endpoint</th>
-                        <th>HTTP Method</th>
-                        <th>Definition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>/api/v2/createpolicy/</td>
-                        <td>POST</td>
-                        <td>Send travel protection application data to generate policy</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3 id='json-request-body-data'>JSON Request Body Data:</h3>
-            <p><strong>Main attribute</strong></p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>JSON Attribute</th>
-                        <th>Definition</th>
-                        <th>Required</th>
-                        <th>Validation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>product</td>
-                        <td>&quot;phone-protection&quot;</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>Name of the person purchasing insurance</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>email_id</td>
-                        <td>Email ID of the person purchasing insurance</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>phone_no</td>
-                        <td>Phone number of the person purchasing insurance</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>reference_id</td>
-                        <td>reference id from to uniquely identify a request, must unique for every phone protection registration</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>make</td>
-                        <td>Brand of the phone</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>model</td>
-                        <td>Model of the phone</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>purchase_date</td>
-                        <td>Date of purchase of the phone as mentioned in the invoice</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>purchase_value</td>
-                        <td>Purchase value of the phone as mentioned in the invoice</td>
-                        <td>Yes</td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <h2 id='phone-protection-status-api'>Travel Protection Status API</h2>
-            <blockquote>
-                <p>Sample URL Request body</p>
-            </blockquote>
-            <pre class="highlight json tab-json"><code><span class="err">#Body</span><span class="w"> </span><span class="err">accepts</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">references</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">post</span><span class="w">
+      <h3 id='definition'>Definition</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>HTTP Method</th>
+            <th>Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/api/v2/createpolicy/</td>
+            <td>POST</td>
+            <td>Send phone protection application data to generate policy</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id='json-request-body-data'>JSON Request Body Data:</h3>
+      <p><strong>Main attribute</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>JSON Attribute</th>
+            <th>Definition</th>
+            <th>Required</th>
+            <th>Validation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>product</td>
+            <td>&quot;phone-protection&quot;</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>Name of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>email_id</td>
+            <td>Email ID of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>phone_no</td>
+            <td>Phone number of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>reference_id</td>
+            <td>reference id from to uniquely identify a request, must unique for every phone protection registration
+            </td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>make</td>
+            <td>Brand of the phone</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>model</td>
+            <td>Model of the phone</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>purchase_date</td>
+            <td>Date of purchase of the phone as mentioned in the invoice</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>purchase_value</td>
+            <td>Purchase value of the phone as mentioned in the invoice</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id='phone-protection-aggregate-policy-api'>Phone Protection Aggregate Policy API</h2>
+      <blockquote>
+        <p>Sample JSON Request Body</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code><span class="p">[{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"phone-protection"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John Doe"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6200000000001"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">"R1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"make"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Apple"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="mi">"iPhone X"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">"2018-12-20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">32000.00</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span>,<span class="p">{</span><span class="w">
+  </span><span class="s2">"product"</span><span class="p">:</span><span class="s2">"phone-protection"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Grey Jone"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grey.jone@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"phone_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"+6200000000002"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"reference_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">"R2"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"make"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Samsung"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"model"</span><span class="p">:</span><span class="w"> </span><span class="mi">"Samsung S10"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_date"</span><span class="p">:</span><span class="w"> </span><span class="mi">"2018-12-20"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"purchase_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">32000.00</span><span class="p">,</span><span class="w">
+</span><span class="p">}]</span>
+
+<span class="w">
+</span></code></pre>
+      <blockquote>
+        <p>The above code snippet returns would return:</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code>{
+    "policies": {
+        "R1": {
+            "application_no": "APP-000000144",
+            "ref": "d442dc31da8fbad82c68ba5d54fa87ca6a6a087f"
+        },
+         "R2": {
+            "application_no": "APP-000000145",
+            "ref": "bbf2dc31da8fbad82c68ba5d54fa87ca6a6a087f"
+        }
+    }
+}</code></pre>
+      <h3 id='definition'>Definition</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>HTTP Method</th>
+            <th>Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/api/v2/createaggregatepolicy/</td>
+            <td>POST</td>
+            <td>Send phone protection application data to generate aggregate policy</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 id='json-request-body-data'>JSON Request Body Data (Array of Objects):</h3>
+      <p><strong>Main attribute</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>JSON Attribute</th>
+            <th>Definition</th>
+            <th>Required</th>
+            <th>Validation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>product</td>
+            <td>&quot;phone-protection&quot;</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td>Name of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>email_id</td>
+            <td>Email ID of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>phone_no</td>
+            <td>Phone number of the person purchasing insurance</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>reference_id</td>
+            <td>reference id from to uniquely identify a request, must unique for every phone protection registration
+            </td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>make</td>
+            <td>Brand of the phone</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>model</td>
+            <td>Model of the phone</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>purchase_date</td>
+            <td>Date of purchase of the phone as mentioned in the invoice</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>purchase_value</td>
+            <td>Purchase value of the phone as mentioned in the invoice</td>
+            <td>Yes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 id='phone-protection-status-api'>Phone Protection Status API</h2>
+      <blockquote>
+        <p>Sample URL Request body</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code><span class="err">#Body</span><span class="w"> </span><span class="err">accepts</span><span class="w"> </span><span class="err">an</span><span class="w"> </span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">references</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">from</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">application</span><span class="w"> </span><span class="err">post</span><span class="w">
 
 </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"ref1"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-            <blockquote>
-                <p>The above code snippet returns would return:</p>
-            </blockquote>
-            <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+      <blockquote>
+        <p>The above code snippet returns would return:</p>
+      </blockquote>
+      <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ref1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"application_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APP-000000XXX"</span><span class="p">,</span><span class="w">
@@ -676,99 +1040,111 @@ APP-000000224
 </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w">
 
 </span></code></pre>
-            <p>Check the statuses of given policies</p>
-            <h3 id='definition-2'>Definition</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Endpoint</th>
-                        <th>HTTP Method</th>
-                        <th>Definition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>/api/v2/policystatus/</td>
-                        <td>POST</td>
-                        <td>Check statuses of given policies</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h1 id='errors'>Errors</h1>
-            <p>Pasarpolis SDK uses the following error codes:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Error Code</th>
-                        <th>Meaning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>400</td>
-                        <td>Bad Request -- Something wrong in request payload. Check API documentation describing payload of the endpoint you are calling.</td>
-                    </tr>
-                    <tr>
-                        <td>403</td>
-                        <td>Forbidden -- Server is not able to validate HMAC signature of this request. Make sure you are calculating the signature exactly same way as described by the documentation.</td>
-                    </tr>
-                    <tr>
-                        <td>404</td>
-                        <td>Not Found -- The specified API or resource could not be found. Refer API documentation to verify you are calling the correct endpoint.</td>
-                    </tr>
-                    <tr>
-                        <td>409</td>
-                        <td>Duplicate Request. A previous request for same data and action has already been processed. Current response body contains information about already processed request e.g. ref and application number in case of policy creation.</td>
-                    </tr>
-                    <tr>
-                        <td>500</td>
-                        <td>Internal Server Error -- We had a problem with our server. Try again later.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h1 id="calculating-hmac">Calculating HMAC</h1>
-            <p>Every request needs to be signed and include the signature in request header.</p>
-            <p><strong>How to calculate the signature?</strong></p>
-            <p>First, you need to calculate string to be signed. String to sign can be obtained as:</p>
-            <div class="center-column"></div>
-            <pre class="highlight plaintext"><code>string_to_sign = VERB + "\n" + content_md5 + "\n" + content_type +
+      <p>Check the statuses of given policies</p>
+      <h3 id='definition-2'>Definition</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>HTTP Method</th>
+            <th>Definition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>/api/v2/policystatus/</td>
+            <td>POST</td>
+            <td>Check statuses of given policies</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 id='errors'>Errors</h1>
+      <p>Pasarpolis SDK uses the following error codes:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Error Code</th>
+            <th>Meaning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>400</td>
+            <td>Bad Request -- Something wrong in request payload. Check API documentation describing payload of the
+              endpoint you are calling.</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Forbidden -- Server is not able to validate HMAC signature of this request. Make sure you are
+              calculating the signature exactly same way as described by the documentation.</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>Not Found -- The specified API or resource could not be found. Refer API documentation to verify you are
+              calling the correct endpoint.</td>
+          </tr>
+          <tr>
+            <td>409</td>
+            <td>Duplicate Request. A previous request for same data and action has already been processed. Current
+              response body contains information about already processed request e.g. ref and application number in case
+              of policy creation.</td>
+          </tr>
+          <tr>
+            <td>500</td>
+            <td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h1 id="calculating-hmac">Calculating HMAC</h1>
+      <p>Every request needs to be signed and include the signature in request header.</p>
+      <p><strong>How to calculate the signature?</strong></p>
+      <p>First, you need to calculate string to be signed. String to sign can be obtained as:</p>
+      <div class="center-column"></div>
+      <pre class="highlight plaintext"><code>string_to_sign = VERB + "\n" + content_md5 + "\n" + content_type +
               "\n" + timestamp + "\n" + api_path
 </code></pre>
-            <ul>
-                <li><strong>VERB</strong>: Http verb ( in upper case ) used to make the call e.g. GET, POST</li>
-                <li><strong>content_md5</strong>: MD5 hash of the request body. Also to be sent as 'Content-MD5' header. Should be empty string in case of get request</li>
-                <li><strong>content_type</strong>: Content-type of the request body. Also to be sent as 'Content-Type' header.</li>
-                <li><strong>timestamp</strong>: Current time in RFC2616 format. Eg: 'Mon, 16 Jul 2018 08:27:53 GMT'. Also send the date in 'X-PP-Date' header.</li>
-                <li><strong>api_path</strong>: Part of the URL after base domain and without query string (in lower case only). Eg: For http://sandbox-integrations.pasarpolis.com/api/v2/policydetails/?id=mypolicyid, api_path is /api/v2/policydetails/</li>
-            </ul>
-            <p>Calculate hmac for partner_secret ( received from PasarPolis ) and string_to_sign using sha256.</p>
-            <div class="center-column"></div>
-            <pre class="highlight plaintext"><code>hmac_digest = hmac(partner_secret, string_to_sign, sha256).digest()
+      <ul>
+        <li><strong>VERB</strong>: Http verb ( in upper case ) used to make the call e.g. GET, POST</li>
+        <li><strong>content_md5</strong>: MD5 hash of the request body. Also to be sent as 'Content-MD5' header. Should
+          be empty string in case of get request</li>
+        <li><strong>content_type</strong>: Content-type of the request body. Also to be sent as 'Content-Type' header.
+        </li>
+        <li><strong>timestamp</strong>: Current time in RFC2616 format. Eg: 'Mon, 16 Jul 2018 08:27:53 GMT'. Also send
+          the date in 'X-PP-Date' header.</li>
+        <li><strong>api_path</strong>: Part of the URL after base domain and without query string (in lower case only).
+          Eg: For http://sandbox-integrations.pasarpolis.com/api/v2/policydetails/?id=mypolicyid, api_path is
+          /api/v2/policydetails/</li>
+      </ul>
+      <p>Calculate hmac for partner_secret ( received from PasarPolis ) and string_to_sign using sha256.</p>
+      <div class="center-column"></div>
+      <pre class="highlight plaintext"><code>hmac_digest = hmac(partner_secret, string_to_sign, sha256).digest()
   </code></pre>
-            <p>Final value to be used in 'Signature' header:</p>
-            <div class="center-column"></div>
-            <pre class="highlight plaintext"><code>base64encode(partner_code + ":" + base64encode(hmac_digest))
+      <p>Final value to be used in 'Signature' header:</p>
+      <div class="center-column"></div>
+      <pre class="highlight plaintext"><code>base64encode(partner_code + ":" + base64encode(hmac_digest))
   </code></pre>
-            <p>where <strong>partner_code</strong> is shared by PasarPolis and <strong>hmac_digest</strong> is digest of hmac calculated in previous step.</p>
-            <p>Values to be sent in Header:</p>
-            <div class="center-column"></div>
-            <pre class="highlight plaintext"><code>'Content-MD5': {content_md5}
+      <p>where <strong>partner_code</strong> is shared by PasarPolis and <strong>hmac_digest</strong> is digest of hmac
+        calculated in previous step.</p>
+      <p>Values to be sent in Header:</p>
+      <div class="center-column"></div>
+      <pre class="highlight plaintext"><code>'Content-MD5': {content_md5}
 'Content-Type': {content_type}
 'X-PP-Date': {timestamp}
 'Partner-Code': {partner_id}
 'Signature': {hmac} as calculated above
 </code></pre>
-        </div>
-        <div class="dark-box">
-            <div class="lang-selector">
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="java">java</a>
-                <a href="#" data-language-name="go">go</a>
-                <a href="#" data-language-name="javascript">javascript</a>
-            </div>
-        </div>
     </div>
+    <div class="dark-box">
+      <div class="lang-selector">
+        <a href="#" data-language-name="ruby">ruby</a>
+        <a href="#" data-language-name="python">python</a>
+        <a href="#" data-language-name="java">java</a>
+        <a href="#" data-language-name="go">go</a>
+        <a href="#" data-language-name="javascript">javascript</a>
+        <a href="#" data-language-name="php">php</a>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
